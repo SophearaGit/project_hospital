@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="./assets/style/style.css">
   <link rel="stylesheet" href="./assets/style/footer.css">
   <link rel="stylesheet" href="./assets/style/header.css">
+  <link rel="stylesheet" href="./assets/responsive/responsive.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <title>department</title>
 </head>
@@ -15,16 +16,26 @@
 <body>
   <header>
     <div class="head">
+
       <div class="head-logo">
         <img src="./assets/images/logo.png" alt="logo">
       </div>
 
-      <div class="head-page">
+      <!-- ONLY ONE MENU BUTTON -->
+      <div class="menu-btn" id="menu-btn">
+        ☰
+      </div>
+
+      <div class="head-page" id="head-page">
+        <div class="close-btn" id="closeBtn">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
         <a href="index.html">HOME</a>
         <a href="about_us.html">ABOUT US</a>
         <a href="department.html">DEPARTMENT</a>
         <a href="contact.html">CONTACT MEETING</a>
       </div>
+
     </div>
   </header>
 
@@ -98,11 +109,36 @@
             </div>
             <button>View Doctors -></button>
           </div>
-        </div>
 
-        <button>View All Department</button>
+          <!-- card 5 -->
+          <div class="dep-card">
+            <div class="department">
+              <i class="fa-solid fa-baby icon blue"></i>
+              <div class="dep-title">
+                <p>Pediatrics</p>
+                <p>Expert care with state-of-the-art facilities</p>
+              </div>
+            </div>
+            <button>View Doctors -></button>
+          </div>
+
+          <!-- card 6 -->
+          <div class="dep-card">
+            <div class="department">
+              <i class="fa-solid fa-stethoscope icon green"></i>
+              <div class="dep-title">
+                <p>General Medicine</p>
+                <p>Expert care with state-of-the-art facilities</p>
+              </div>
+            </div>
+            <button>View Doctors -></button>
+          </div>
+        </div>
+        <div class="btn">
+          <button>View All Department</button>
+        </div>
+      </div>
     </section>
-    </div>
   </main>
 
   <footer class="footer">
@@ -134,6 +170,10 @@
       </div>
     </div>
   </footer>
+
+ 
+  <script src="./assets/script/script.js"></script>
+
 </body>
 
 </html>

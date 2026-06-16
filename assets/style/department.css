@@ -27,7 +27,9 @@ main {
 }
 
 .back-page .back-container>h1 {
-    font-size: 20px;
+    font-size: 28px;
+    font-weight: 600;
+    color: #0f172a;
 }
 
 .back-page .back-container>p {
@@ -38,6 +40,7 @@ main {
 .container {
     margin-top: 20px;
     width: 100%;
+    margin-bottom: 100px;
     /* background-color: antiquewhite; */
 }
 
@@ -74,7 +77,6 @@ main {
     border: 1px solid rgb(208, 207, 207);
     border-radius: 10px;
     padding: 20px 50px;
-    cursor: pointer;
     transition: tranform 0.2 ease, box-shadow 0.3 ease;
     box-shadow: 0px 4px 6px rgb(219, 217, 217);
     /* background-color: #717182; */
@@ -106,7 +108,9 @@ main {
 }
 
 .department .purple {color: #AD46FF;}
+.department .green {color: rgb(13, 235, 13);}
 .department .red {color: #FB2C36;}
+.department .blue {color: rgb(82, 82, 249);}
 
 .department .dep-title>p:first-child {
     font-size: 20px;
@@ -121,5 +125,23 @@ main {
     font-size: 16px;
     border: none;
     background-color: white;
+    cursor: pointer;
+}
 
+.container .dep-container .btn {
+    width: 100%;
+    /* background-color: #717182; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .dep-container .btn>button {
+    padding: 20px 60px;
+    /* width: 200px; */
+    margin-top: 50px;
+    background-color: #030213;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 15px;
 }

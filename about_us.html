@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/style/footer.css">
     <link rel="stylesheet" href="./assets/style/header.css">
+    <link rel="stylesheet" href="/assets/responsive/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Document</title>
 </head>
@@ -13,16 +14,26 @@
 <body>
     <header>
         <div class="head">
+
             <div class="head-logo">
                 <img src="./assets/images/logo.png" alt="logo">
             </div>
 
-            <div class="head-page">
+            <!-- ONLY ONE MENU BUTTON -->
+            <div class="menu-btn" id="menu-btn">
+                ☰
+            </div>
+
+            <div class="head-page" id="head-page">
+                <div class="close-btn" id="closeBtn">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
                 <a href="index.html">HOME</a>
                 <a href="about_us.html">ABOUT US</a>
                 <a href="department.html">DEPARTMENT</a>
                 <a href="contact.html">CONTACT MEETING</a>
             </div>
+
         </div>
     </header>
 
@@ -59,6 +70,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="./assets/script/script.js"></script>
 </body>
 
 </html>

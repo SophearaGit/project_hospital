@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./assets/style/style.css">
     <link rel="stylesheet" href="./assets/style/footer.css">
     <link rel="stylesheet" href="./assets/style/header.css">
+    <link rel="stylesheet" href="/assets/responsive/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Home Page</title>
 </head>
@@ -14,16 +15,26 @@
 <body>
     <header>
         <div class="head">
+
             <div class="head-logo">
-                <img src="../assets/images/logo.png" alt="logo">
+                <img src="./assets/images/logo.png" alt="logo">
             </div>
 
-            <div class="head-page">
+            <!-- ONLY ONE MENU BUTTON -->
+            <div class="menu-btn" id="menu-btn">
+                ☰
+            </div>
+
+            <div class="head-page" id="head-page">
+                <div class="close-btn" id="closeBtn">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
                 <a href="index.html">HOME</a>
                 <a href="about_us.html">ABOUT US</a>
                 <a href="department.html">DEPARTMENT</a>
                 <a href="contact.html">CONTACT MEETING</a>
             </div>
+
         </div>
     </header>
 
@@ -282,7 +293,7 @@
                     </div>
 
                     <!-- card 2 -->
-                     <div class="patient-card">
+                    <div class="patient-card">
                         <div class="patien-rating">
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
@@ -296,7 +307,7 @@
                     </div>
 
                     <!-- card 3 -->
-                     <div class="patient-card">
+                    <div class="patient-card">
                         <div class="patien-rating">
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
@@ -322,26 +333,29 @@
             </div>
 
             <!-- Contact -->
-             <div class="footer-info">
+            <div class="footer-info">
                 <h1>Contact</h1>
                 <p>
                     <span>123 Medical Center Drive City, State 12345</span>
                     <span>Phone: (555) 123-4567</span>
                     <span>Email: info@cityhospital.com</span>
                 </p>
-             </div>
+            </div>
 
-             <!-- hours -->
-             <div class="footer-info">
+            <!-- hours -->
+            <div class="footer-info">
                 <h1>Hours</h1>
                 <p>
                     <span>Emergency: 24/7</span>
                     <span>Outpatient: Mon-Fri 8AM-6PM</span>
                     <span>Saturday: 9AM-2PM</span>
                 </p>
-             </div>
+            </div>
         </div>
     </footer>
+
+    <script src="./assets/script/script.js"></script>
+
 </body>
 
 </html>
