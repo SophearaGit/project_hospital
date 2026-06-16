@@ -1,0 +1,29 @@
+
+.footer {
+    width: 100%;
+    background-color: rgb(210, 208, 208);
+    margin-top: 40px;
+    padding-block: 50px;
+}   
+
+.footer .foot-grid {
+    margin-inline: 15%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.footer .foot-grid .footer-info>h1 {
+   font-size: 25px;
+   font-family: 'Times New Roman', Times, serif;
+}
+
+.footer .foot-grid .footer-info>p {
+    display: grid;
+    color: #6a6a73;
+    font-size: 20px;
+}
+
+.footer .foot-grid .footer-info>p span {
+    padding: 4px;
+}

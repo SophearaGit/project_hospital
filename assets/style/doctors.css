@@ -1,0 +1,57 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    margin: 0;
+    padding: 0;
+}
+
+.back-page {
+    /* background-color: aqua; */
+    width: 100%;
+}
+
+.back-page .back-container {
+    margin-inline: 15%;
+    margin-top: 90px;
+}
+
+.back-page .back-container>a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #626263;
+}
+
+.back-page .back-container>h1 {
+    font-size: 20px;
+}
+
+.back-page .back-container>p {
+    color: #717182;
+    margin: 0;
+}
+
+.container {
+    /* background-color: aqua; */
+    width: 100%;
+}
+
+.container .doctor-container {
+    margin-inline: 15%;
+    /* background-color: bisque; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container .doctor-container .doctors-grid {
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: rebeccapurple; */
+    gap: 100px;
+    justify-content: center;
+}
