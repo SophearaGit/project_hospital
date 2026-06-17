@@ -1,6 +1,23 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #1a1a1a;
+    --accent-color: #3b82f6;
+}
+
+/* --- 2. DARK MODE VARIABLES --- */
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #f5f5f5;
+    --accent-color: #60a5fa;
+}
+
+/* --- 3. APPLY VARIABLES TO YOUR STYLES --- */
 body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    /* Smooth fading transition when changing modes */
+    transition: background-color 0.3s ease, color 0.3s ease; 
     margin: 0;
-    padding: 0;
 }
 
 /* main */
@@ -36,12 +53,21 @@ main {
     color: rgba(26, 12, 12, 0.808);
 }
 
+body.dark-mode .hero-section .hero-content h1 span:first-child {
+    color: #f5f5f5;
+}
+
 .hero-section .hero-content h1 span:last-child {
-    color: rgba(40, 40, 252, 0.585);
+    color: #60a5fa;
 }
 
 .hero-section .hero-content p {
     color: rgb(112, 110, 110);
+    font-size: 20px;
+}
+
+body.dark-mode .hero-section .hero-content p {
+    color: #f5f5f5;
     font-size: 20px;
 }
 
@@ -50,7 +76,7 @@ main {
     gap: 50px;
 }
 
-.hero-section .hero-content .hero-btn button:first-child {
+.hero-section .hero-content .hero-btn a button:first-child {
     padding: 15px 20px;
     font-size: 15px;
     /* font-weight: bold; */
@@ -61,7 +87,7 @@ main {
     transition: 0.3s;
 }
 
-.hero-section .hero-content .hero-btn button:first-child:hover {
+.hero-section .hero-content .hero-btn a button:first-child:hover {
     cursor: pointer;
     box-shadow: 0px 4px 8px rgb(139, 137, 137);
 }
@@ -160,7 +186,7 @@ main {
 .contain .stats-grid .stat-card {
     border: 1px solid rgba(223, 222, 222, 0.677);
     border-radius: 16px;
-    background-color: white;
+    background-color: #f5f5f5;
     display: flex;
     flex-direction: column;
     padding: 26px;
@@ -259,6 +285,11 @@ main {
     color: rgb(93, 92, 92);
 }
 
+body.dark-mode .section-header p {
+    font-size: 20px;
+    color: #f5f5f5;
+}
+
 .doctors-grid {
     width: 100%;
     display: grid;
@@ -270,7 +301,7 @@ main {
 }
 
 .doctors-grid .doctor-card {
-    border: 1px solid rgb(224, 223, 223);
+    border: 1px solid #f5f5f5;
     border-radius: 10px;
     width: 350px;
     /* background-color: chocolate; */
@@ -283,6 +314,11 @@ main {
     cursor: pointer;
     transition: tranform 0.3 ease, box-shadow 0.2 ease;
 }
+
+/* body.dark-mode .doctors-grid .doctor-card {
+    color: #2c2b2b;
+    box-shadow: 0px 6px 10px rgba(76, 75, 75, 0.785);
+} */
 
 .doctors-grid .doctor-card:hover {
     transform: translateY(-2px);
@@ -309,12 +345,12 @@ main {
 .doctors-grid .doctor-card .doctor-info h3 {
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
-    color: #1a202c;
+    /* color: #1a202c; */
 }
 
 .doctors-grid .doctor-card .doctor-info p {
     font-size: 19px;
-    color: rgb(98, 98, 98);
+    /* color: rgb(98, 98, 98); */
 }
 
 .doctors-grid .doctor-card .doctor-rating {
@@ -387,6 +423,12 @@ main {
     margin-top: 80px;
 }
 
+body.dark-mode .why-choose-us {
+    width: 100%;
+    background-color: #222222;
+    margin-top: 80px;
+}
+
 .why-choose-us .container {
     margin-inline: 15%;
     /* background-color: aquamarine; */
@@ -443,6 +485,11 @@ main {
     color: #717182;
 }
 
+body.dark-mode .why-choose-us .container .features-grid .feature-card p {
+    font-size: 20px;
+    color: #f5f5f5;
+}
+
 /* section 5 */
 
 .patien {
@@ -493,6 +540,12 @@ main {
 
 .patien-container .patients-grid .patient-card>p {
     color: #717182;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body.dark-mode .patien-container .patients-grid .patient-card>p {
+    color: #f5f5f5;
     font-size: 18px;
     font-family: 'Times New Roman', Times, serif;
 }

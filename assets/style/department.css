@@ -1,5 +1,22 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #1a1a1a;
+    --accent-color: #3b82f6;
+}
+
+/* --- 2. DARK MODE VARIABLES --- */
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #f5f5f5;
+    --accent-color: #60a5fa;
+}
+
+/* --- 3. APPLY VARIABLES TO YOUR STYLES --- */
 body {
-    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    /* Smooth fading transition when changing modes */
+    transition: background-color 0.3s ease, color 0.3s ease; 
     margin: 0;
 }
 
@@ -26,14 +43,27 @@ main {
     color: #626263;
 }
 
+body.dark-mode .back-page .back-container>a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #f5f5f5;
+}
+
 .back-page .back-container>h1 {
     font-size: 28px;
     font-weight: 600;
-    color: #0f172a;
+    /* color: #0f172a; */
 }
 
 .back-page .back-container>p {
     color: #717182;
+    margin: 0;
+}
+
+body.dark-mode .back-page .back-container>p {
+    color: #f5f5f5;
     margin: 0;
 }
 
@@ -57,12 +87,17 @@ main {
 
 .container .dep-container .title-dep>h1 {
     font-size: 40px;
-    color: #0A0A0A;
+    /* color: #0A0A0A; */
 }
 
 .container .dep-container .title-dep>p {
     font-size: 20px;
     color: #717182;
+}
+
+.container .dep-container .title-dep>p {
+    font-size: 20px;
+    color: #f5f5f5;
 }
 
 .container .dep-container .dep-grid {
@@ -118,6 +153,10 @@ main {
 
 .department .dep-title>p:last-child {
     color: #717182;
+}
+
+body.dark-mode .department .dep-title>p:last-child {
+    color: #f5f5f5;
 }
 
 .container .dep-container .dep-grid .dep-card>button {

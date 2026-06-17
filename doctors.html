@@ -8,35 +8,45 @@
   <link rel="stylesheet" href="./assets/style/style.css">
   <link rel="stylesheet" href="./assets/style/footer.css">
   <link rel="stylesheet" href="./assets/style/header.css">
+  <link rel="stylesheet" href="/assets/style/doctors.css">
+  <link rel="stylesheet" href="/assets/">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <title>Doctors</title>
 </head>
 
 <body>
   <header>
-        <div class="head">
+    <nav class="head">
 
-            <div class="head-logo">
-                <img src="./assets/images/logo.png" alt="logo">
-            </div>
+      <div class="head-logo">
+        <img src="./assets/images/logo.png" alt="logo">
+      </div>
 
-            <!-- ONLY ONE MENU BUTTON -->
-            <div class="menu-btn" id="menu-btn">
-                ☰
-            </div>
+      <!-- ONLY ONE MENU BUTTON -->
+      <div class="menu-btn" id="menu-btn">
+        ☰
+      </div>
 
-            <div class="head-page" id="head-page">
-                <div class="close-btn" id="closeBtn">
-                    <i class="fa-solid fa-xmark"></i>
-                </div>
-                <a href="index.html">HOME</a>
-                <a href="about_us.html">ABOUT US</a>
-                <a href="department.html">DEPARTMENT</a>
-                <a href="contact.html">CONTACT MEETING</a>
-            </div>
-
+      <div class="head-page" id="head-page">
+        <div class="close-btn" id="closeBtn">
+          <i class="fa-solid fa-xmark"></i>
         </div>
-    </header>
+        <a href="index.html">HOME</a>
+        <a href="about_us.html">ABOUT US</a>
+        <a href="department.html">DEPARTMENT</a>
+        <a href="contact.html">CONTACT MEETING</a>
+
+        <div class="nav-icons">
+          <i id="theme-toggle" class="fa-regular fa-moon"></i>
+          <div class="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search..." class="sear">
+          </div>
+        </div>
+      </div>
+    </nav>
+    </div>
+  </header>
 
   <main>
     <section class="back-page">
@@ -46,7 +56,7 @@
           Back to Home
         </a>
 
-        <h1>All Departments</h1>
+        <h1>All Doctors</h1>
         <p>
           Explore our medical departments and find the specialized care you need.
         </p>
@@ -57,7 +67,7 @@
       <div class="doctor-container">
 
         <div class="title-dep">
-          <h1>Our Departments</h1>
+          <h1>Our Doctors</h1>
           <p>We offer comprehensive healthcare services across multiple specialties</p>
         </div>
 
@@ -211,7 +221,7 @@
           </div>
 
           <!-- card 5 -->
-           <div class="doctor-card">
+          <div class="doctor-card">
             <div class="doctor-avatar">
               <img src="./assets/images/top-doctor1.jpg" alt="">
             </div>
@@ -248,7 +258,7 @@
           </div>
 
           <!-- card 6 -->
-           <div class="doctor-card">
+          <div class="doctor-card">
             <div class="doctor-avatar">
               <img src="./assets/images/top-doctor1.jpg" alt="">
             </div>
@@ -318,7 +328,7 @@
     </div>
   </footer>
 
- 
+
   <script src="./assets/script/script.js"></script>
 
 

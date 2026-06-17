@@ -1,3 +1,25 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #1a1a1a;
+    --accent-color: #3b82f6;
+}
+
+/* --- 2. DARK MODE VARIABLES --- */
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #f5f5f5;
+    --accent-color: #60a5fa;
+}
+
+/* --- 3. APPLY VARIABLES TO YOUR STYLES --- */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    /* Smooth fading transition when changing modes */
+    transition: background-color 0.3s ease, color 0.3s ease; 
+    margin: 0;
+}
+
 header {
     /* background-color: red; */
     width: 100%;
@@ -33,6 +55,10 @@ header {
     user-select: none;
 }
 
+.close-btn {
+    display: none;
+}
+
 .head-page {
     display: none;
 }
@@ -58,7 +84,44 @@ header {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+body.dark-mode .head-page a {
+    color: #f5f5f5;
+}
+
 .head-page a:hover {
     box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.15);
     transform: translateY(-2px);
+}
+
+.nav-icons {
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 6px 10px;
+    width: 40px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    /* color: #121212; */
+    right: -50px;
+}
+
+.search:hover,
+.search:focus-within {
+    width: 200px;
+    border-color: #ccc;
+}
+
+.search input {
+    border: none;
+    outline: none;
+    margin-left: 25px;
+    width: 100%;
 }

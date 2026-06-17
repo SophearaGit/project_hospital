@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const headPage = document.getElementById("head-page");
 
     if (headPage) {
-        
+
         // 1. Open menu & hide the hamburger button (☰)
         if (menuBtn) {
             menuBtn.addEventListener("click", (event) => {
@@ -34,7 +34,47 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 1. SELECT ALL YOUR HTML ELEMENTS
+    // Dark Mode
+
+    const toggle = document.getElementById("theme-toggle");
+
+    // 1. Check localStorage for a saved theme, default to 'light' if empty
+    const saveTheme = localStorage.getItem("theme") || "light";
+
+    // Helper function to handle the theme swapping
+    function applyTheme(theme) {
+        if (theme === "dark") {
+            document.body.classList.add("dark-mode");
+            // Switch from regular moon outline to solid sun filled icon
+            toggle.classList.remove("fa-regular", "fa-moon");
+            toggle.classList.add("fa-solid", "fa-sun");
+        } else {
+            document.body.classList.remove("dark-mode");
+            // Switch from solid sun back to regular moon outline
+            toggle.classList.remove("fa-solid", "fa-sun");
+            toggle.classList.add("fa-regular", "fa-moon");
+        }
+    }
+
+    // 2. Apply the theme immediately when the page loads
+    applyTheme(saveTheme);
+
+    // 3. Listen for clicks to flip between light and dark
+    toggle.addEventListener("click", () => {
+        const isDark = document.body.classList.contains("dark-mode");
+
+        // If it's currently dark, change to light. Otherwise, change to dark.
+        const nextTheme = isDark ? "light" : "dark";
+
+        // Save the choice to localStorage so it persists on reload
+        localStorage.setItem("theme", nextTheme);
+
+        // Update the website's appearance
+        applyTheme(nextTheme);
+    });
+
+
+    // calender in contact
     const monthYearDisplay = document.getElementById("month-year-display");
     const daysContainer = document.getElementById("calendar-days-container");
     const prevBtn = document.getElementById("prev-month");
@@ -42,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- CRITICAL SAFETY BLOCK: Only build calendar if elements exist on this page ---
     if (monthYearDisplay && daysContainer && prevBtn && nextBtn) {
-        
+
         // Initialize calendar configuration state
         let currentDate = new Date(2026, 5, 1); // June 2026
         let selectedDateStr = "2026-06-09";
