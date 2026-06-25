@@ -115,6 +115,7 @@ body.dark-mode .back-page .back-container>p {
     transition: tranform 0.2 ease, box-shadow 0.3 ease;
     box-shadow: 0px 4px 6px rgb(219, 217, 217);
     /* background-color: #717182; */
+    width: 320px;
 }
 
 .container .dep-container .dep-grid .dep-card:hover {
@@ -130,28 +131,21 @@ body.dark-mode .back-page .back-container>p {
 
 }
 
-.department .icon {
-    font-size: 30px;
-    background-color: gainsboro;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    margin-bottom: 20px;
+.dep-img>img {
+    width: 100px;
     border-radius: 10px;
 }
 
-.department .purple {color: #AD46FF;}
-.department .green {color: rgb(13, 235, 13);}
-.department .red {color: #FB2C36;}
-.department .blue {color: rgb(82, 82, 249);}
+.dep-img>h4{
+    text-align: center;
+    flex-wrap: wrap;
+}
 
 .department .dep-title>p:first-child {
     font-size: 20px;
 }
 
-.department .dep-title>p:last-child {
+.department .dep-title .dep-des {
     color: #717182;
 }
 
@@ -163,7 +157,7 @@ body.dark-mode .department .dep-title>p:last-child {
     margin-left: 60px;
     font-size: 16px;
     border: none;
-    background-color: white;
+    background-color: #d3d3d4;
     cursor: pointer;
 }
 
@@ -179,7 +173,7 @@ body.dark-mode .department .dep-title>p:last-child {
     padding: 20px 60px;
     /* width: 200px; */
     margin-top: 50px;
-    background-color: #030213;
+    background-color: #55565a;
     color: #FFFFFF;
     border: none;
     border-radius: 15px;

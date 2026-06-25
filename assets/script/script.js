@@ -1,4 +1,8 @@
-// This wrapper tells JavaScript to wait until the HTML is fully loaded
+import { doctorData } from '/assets/feth_data/doctors.js';
+import { departmentData } from '../feth_data/departments.js';
+
+
+// Side Bar
 document.addEventListener("DOMContentLoaded", () => {
 
     const menuBtn = document.getElementById("menu-btn");
@@ -7,84 +11,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (headPage) {
 
-        // 1. Open menu & hide the hamburger button (☰)
         if (menuBtn) {
             menuBtn.addEventListener("click", (event) => {
                 event.stopPropagation();
                 headPage.classList.add("show");
-                menuBtn.classList.add("hidden"); // <-- Hides the ☰ button
+                menuBtn.classList.add("hidden");
             });
         }
 
-        // 2. Close menu & bring the hamburger button (☰) back
         if (closeBtn) {
             closeBtn.addEventListener("click", (event) => {
                 event.stopPropagation();
                 headPage.classList.remove("show");
-                if (menuBtn) menuBtn.classList.remove("hidden"); // <-- Shows the ☰ button back
+                if (menuBtn) menuBtn.classList.remove("hidden");
             });
         }
 
-        // 3. Bring ☰ back if a user closes the menu by clicking outside of it
         document.addEventListener("click", (event) => {
             if (!headPage.contains(event.target) && event.target !== menuBtn) {
                 headPage.classList.remove("show");
-                if (menuBtn) menuBtn.classList.remove("hidden"); // <-- Shows the ☰ button back
+                if (menuBtn) menuBtn.classList.remove("hidden");
             }
         });
     }
+});
 
-    // Dark Mode
-
-    const toggle = document.getElementById("theme-toggle");
-
-    // 1. Check localStorage for a saved theme, default to 'light' if empty
-    const saveTheme = localStorage.getItem("theme") || "light";
-
-    // Helper function to handle the theme swapping
-    function applyTheme(theme) {
-        if (theme === "dark") {
-            document.body.classList.add("dark-mode");
-            // Switch from regular moon outline to solid sun filled icon
-            toggle.classList.remove("fa-regular", "fa-moon");
-            toggle.classList.add("fa-solid", "fa-sun");
-        } else {
-            document.body.classList.remove("dark-mode");
-            // Switch from solid sun back to regular moon outline
-            toggle.classList.remove("fa-solid", "fa-sun");
-            toggle.classList.add("fa-regular", "fa-moon");
-        }
-    }
-
-    // 2. Apply the theme immediately when the page loads
-    applyTheme(saveTheme);
-
-    // 3. Listen for clicks to flip between light and dark
-    toggle.addEventListener("click", () => {
-        const isDark = document.body.classList.contains("dark-mode");
-
-        // If it's currently dark, change to light. Otherwise, change to dark.
-        const nextTheme = isDark ? "light" : "dark";
-
-        // Save the choice to localStorage so it persists on reload
-        localStorage.setItem("theme", nextTheme);
-
-        // Update the website's appearance
-        applyTheme(nextTheme);
-    });
-
-
-    // calender in contact
+// calender in contact
+document.addEventListener("DOMContentLoaded", () => {
     const monthYearDisplay = document.getElementById("month-year-display");
     const daysContainer = document.getElementById("calendar-days-container");
     const prevBtn = document.getElementById("prev-month");
     const nextBtn = document.getElementById("next-month");
 
-    // --- CRITICAL SAFETY BLOCK: Only build calendar if elements exist on this page ---
     if (monthYearDisplay && daysContainer && prevBtn && nextBtn) {
 
-        // Initialize calendar configuration state
-        let currentDate = new Date(2026, 5, 1); // June 2026
+        let currentDate = new Date(2026, 5, 1);
         let selectedDateStr = "2026-06-09";
 
         const months = [
@@ -92,7 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
             "July", "August", "September", "October", "November", "December"
         ];
 
-        // 2. THE CALENDAR RENDER ENGINE
         function renderCalendar() {
             const year = currentDate.getFullYear();
             const month = currentDate.getMonth();
@@ -105,19 +65,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
             let daysHTML = "";
 
-            // Previous Month Days Padding (Muted)
             for (let i = firstDayIndex; i > 0; i--) {
                 daysHTML += `<span class="day-muted">${prevTotalDays - i + 1}</span>`;
             }
 
-            // Active Target Month Days
             for (let day = 1; day <= totalDays; day++) {
                 const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
                 const isSelected = dateStr === selectedDateStr ? 'class="day-selected"' : '';
                 daysHTML += `<span ${isSelected} data-date="${dateStr}">${day}</span>`;
             }
 
-            // Next Month Days Padding (Muted)
             const totalGridCells = firstDayIndex + totalDays;
             const nextMonthPadding = totalGridCells % 7 === 0 ? 0 : 7 - (totalGridCells % 7);
             for (let j = 1; j <= nextMonthPadding; j++) {
@@ -139,7 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
-        // 3. NAVIGATION ARROW LISTENERS
         prevBtn.addEventListener("click", () => {
             currentDate.setMonth(currentDate.getMonth() - 1);
             renderCalendar();
@@ -150,11 +106,9 @@ document.addEventListener("DOMContentLoaded", () => {
             renderCalendar();
         });
 
-        // 5. RUN INITIAL LAYOUT BUILD ONCE
         renderCalendar();
     }
 
-    // 4. TIME SLOTS HIGHLIGHT MANAGER (Safely targets slots if any exist)
     const timeButtons = document.querySelectorAll(".time-btn");
     if (timeButtons.length > 0) {
         timeButtons.forEach(button => {
@@ -164,4 +118,210 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
+})
+
+// Dark Mode
+document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById("theme-toggle");
+
+    const saveTheme = localStorage.getItem("theme") || "light";
+
+    function applyTheme(theme) {
+        if (theme === "dark") {
+            document.body.classList.add("dark-mode");
+            toggle.classList.remove("fa-regular", "fa-moon");
+            toggle.classList.add("fa-solid", "fa-sun");
+        } else {
+            document.body.classList.remove("dark-mode");
+            toggle.classList.remove("fa-solid", "fa-sun");
+            toggle.classList.add("fa-regular", "fa-moon");
+        }
+    }
+
+    applyTheme(saveTheme);
+
+    toggle.addEventListener("click", () => {
+        const isDark = document.body.classList.contains("dark-mode");
+
+        const nextTheme = isDark ? "light" : "dark";
+
+        localStorage.setItem("theme", nextTheme);
+
+        applyTheme(nextTheme);
+    });
+
 });
+
+/// count number in home page on section 2
+document.addEventListener("DOMContentLoaded", () => {
+    const stats = document.querySelectorAll(".stat-number");
+
+    const animateCounter = (element) => {
+        const text = element.innerText.trim();
+
+        const targetNumber = parseInt(text.replace(/[^0-9]/g, ""), 10);
+
+        const suffix = text.replace(/[0-9,]/g, ""); 
+
+        if (isNaN(targetNumber)) return;
+
+        let start = 0;
+        const duration = 2000;
+        const frameRate = 1000 / 60;
+        const totalFrames = Math.round(duration / frameRate);
+        const increment = targetNumber / totalFrames;
+
+        let currentFrame = 0;
+
+        element.innerText = "0" + suffix;
+
+        const counter = setInterval(() => {
+            currentFrame++;
+            start += increment;
+
+            if (currentFrame >= totalFrames) {
+                clearInterval(counter);
+                element.innerText = text; 
+            } else {
+                element.innerText = Math.floor(start) + suffix;
+            }
+        }, frameRate);
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                observer.unobserve(entry.target); 
+            }
+        });
+    }, { 
+        threshold: 0.1, 
+        rootMargin: "0px 0px -50px 0px" 
+    });
+
+    stats.forEach(stat => observer.observe(stat));
+});
+
+
+// all doctor 
+document.addEventListener("DOMContentLoaded", () => {
+    const doctorsGrid = document.getElementById("doctorsGrid");
+    const viewAllBtn = document.querySelector(".btn button"); 
+
+    if (doctorsGrid) {
+        let visibleCount = 6; 
+
+        function renderDoctors() {
+            let cardHTML = "";
+            
+            const itemsToShow = doctorData.slice(0, visibleCount);
+
+            itemsToShow.forEach(doctor => {
+                cardHTML += `
+                    <div class="doctor-card">
+                      <div class="doctor-avatar">
+                        <img src="${doctor.image}" alt="${doctor.name}">
+                      </div>
+
+                      <div class="doctor-info">
+                        <h3>${doctor.name}</h3>
+                        <p>${doctor.specialty}</p>
+                      </div>
+
+                      <div class="doctor-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <div class="rating">
+                          ${doctor.rating} <span>(${doctor.reviews || 201})</span>
+                        </div>
+                      </div>
+
+                      <div class="doctor-meta">
+                        <div class="meta">
+                          <span>Experience</span>
+                          <span>${doctor.experience}</span>
+                        </div>
+                        <div class="meta">
+                          <span>Available</span>
+                          <span>${doctor.availability || 'Mon, Wed, Fri'}</span>
+                        </div>
+                      </div>
+
+                      <button class="book-btn">
+                        <a href="contact_us.html">
+                          <i style="font-size:24px" class="fas">&#xf0b1;</i>
+                          <span>Book Appointment</span>
+                        </a>
+                      </button>
+                    </div>
+                `;
+            });
+
+            doctorsGrid.innerHTML = cardHTML;
+
+            if (viewAllBtn && visibleCount >= doctorData.length) {
+                viewAllBtn.style.display = "none";
+            }
+        }
+
+        renderDoctors();
+
+        if (viewAllBtn) {
+            viewAllBtn.addEventListener("click", () => {
+                visibleCount += 6;
+                renderDoctors(); 
+            });
+        }
+    }
+});
+
+// all departments
+document.addEventListener("DOMContentLoaded", () => {
+  const departmentsGrid = document.getElementById("departmentsGrid");
+  const viewAllBtn = document.querySelector(".btn button"); // ចាប់យកប៊ូតុង View All
+
+  if (departmentsGrid) {
+    let visibleCount = 6; 
+
+    function renderDepartments() {
+      let depHTML = "";
+      
+      const itemsToShow = departmentData.slice(0, visibleCount);
+
+      itemsToShow.forEach(dep => {
+        depHTML += `
+          <div class="dep-card">
+              <div class="department">
+                <div class="dep-img">
+                  <img src="${dep.managerImage}" alt="${dep.managerName}">
+                  <h4>${dep.managerName}</h4>
+                </div>
+                <div class="dep-title">
+                  <p>${dep.title}</p>
+                  <p class="dep-des">${dep.description}</p>
+                  <button>${dep.linkText}</button>
+                </div>
+              </div>
+            </div>
+        `;
+      });
+
+      departmentsGrid.innerHTML = depHTML;
+
+      if (viewAllBtn && visibleCount >= departmentData.length) {
+        viewAllBtn.style.display = "none"; 
+      }
+    }
+
+    renderDepartments();
+
+    if (viewAllBtn) {
+      viewAllBtn.addEventListener("click", () => {
+        visibleCount += 6; 
+        renderDepartments();
+      });
+    }
+  }
+});
+
+

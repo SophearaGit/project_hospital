@@ -5,11 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./assets/style/department.css">
-  <link rel="stylesheet" href="./assets/style/style.css">
+  <!-- <link rel="stylesheet" href="./assets/style/style.css"> -->
   <link rel="stylesheet" href="./assets/style/footer.css">
   <link rel="stylesheet" href="./assets/style/header.css">
-  <link rel="stylesheet" href="/assets/style/doctors.css">
-  <link rel="stylesheet" href="/assets/">
+
+  <link rel="stylesheet" href="./assets/style/doctors.css">
+
+  <link rel="stylesheet" href="./assets/responsive/responsive.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <title>Doctors</title>
 </head>
@@ -34,7 +36,7 @@
         <a href="index.html">HOME</a>
         <a href="about_us.html">ABOUT US</a>
         <a href="department.html">DEPARTMENT</a>
-        <a href="contact.html">CONTACT MEETING</a>
+        <a href="contact_us.html">CONTACT US</a>
 
         <div class="nav-icons">
           <i id="theme-toggle" class="fa-regular fa-moon"></i>
@@ -71,9 +73,11 @@
           <p>We offer comprehensive healthcare services across multiple specialties</p>
         </div>
 
-        <div class="doctors-grid">
+        <div class="doctors-grid" id="doctorsGrid">
+
+
           <!-- card 1 -->
-          <div class="doctor-card">
+          <!-- <div class="doctor-card">
             <div class="doctor-avatar">
               <img src="./assets/images/top-doctor1.jpg" alt="">
             </div>
@@ -103,14 +107,17 @@
               </div>
             </div>
 
+
             <button class="book-btn">
-              <i style='font-size:24px' class='fas'>&#xf0b1;</i>
-              <span>Book Appointment</span>
+              <a href="/contact.html" >
+                <i style='font-size:24px' class='fas'>&#xf0b1;</i>
+                <span>Book Appointment</span>
+              </a>
             </button>
-          </div>
+          </div> -->
 
           <!-- card 2 -->
-          <div class="doctor-card">
+          <!-- <div class="doctor-card">
             <div class="doctor-avatar">
               <img src="./assets/images/top-doctor1.jpg" alt="">
             </div>
@@ -144,10 +151,10 @@
               <i style='font-size:24px' class='fas'>&#xf0b1;</i>
               <span>Book Appointment</span>
             </button>
-          </div>
+          </div> -->
 
           <!-- card 3 -->
-          <div class="doctor-card">
+          <!-- <div class="doctor-card">
             <div class="doctor-avatar">
               <img src="./assets/images/top-doctor1.jpg" alt="">
             </div>
@@ -181,10 +188,10 @@
               <i style='font-size:24px' class='fas'>&#xf0b1;</i>
               <span>Book Appointment</span>
             </button>
-          </div>
+          </div> -->
 
           <!-- card 4 -->
-          <div class="doctor-card">
+          <!-- <div class="doctor-card">
             <div class="doctor-avatar">
               <img src="./assets/images/top-doctor1.jpg" alt="">
             </div>
@@ -218,10 +225,10 @@
               <i style='font-size:24px' class='fas'>&#xf0b1;</i>
               <span>Book Appointment</span>
             </button>
-          </div>
+          </div> -->
 
           <!-- card 5 -->
-          <div class="doctor-card">
+          <!-- <div class="doctor-card">
             <div class="doctor-avatar">
               <img src="./assets/images/top-doctor1.jpg" alt="">
             </div>
@@ -255,10 +262,10 @@
               <i style='font-size:24px' class='fas'>&#xf0b1;</i>
               <span>Book Appointment</span>
             </button>
-          </div>
+          </div> -->
 
           <!-- card 6 -->
-          <div class="doctor-card">
+          <!-- <div class="doctor-card">
             <div class="doctor-avatar">
               <img src="./assets/images/top-doctor1.jpg" alt="">
             </div>
@@ -292,7 +299,11 @@
               <i style='font-size:24px' class='fas'>&#xf0b1;</i>
               <span>Book Appointment</span>
             </button>
-          </div>
+          </div> -->
+        </div>
+
+        <div class="btn">
+          <button>View All Department</button>
         </div>
       </div>
     </section>
@@ -329,7 +340,7 @@
   </footer>
 
 
-  <script src="./assets/script/script.js"></script>
+  <script src="./assets/script/script.js" type="module"></script>
 
 
 </body>

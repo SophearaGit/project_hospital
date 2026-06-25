@@ -16,7 +16,7 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     /* Smooth fading transition when changing modes */
-    transition: background-color 0.3s ease, color 0.3s ease; 
+    transition: background-color 0.3s ease, color 0.3s ease;
     margin: 0;
 }
 
@@ -48,7 +48,7 @@ header {
 }
 
 .menu-btn {
-    display: none; 
+    display: none;
     font-size: 30px;
     cursor: pointer;
     color: black;
@@ -66,6 +66,7 @@ header {
 .head-page {
     /* background-color: aqua; */
     display: flex;
+    align-items: center;
     gap: 40px;
     list-style: none;
     cursor: pointer;
@@ -79,7 +80,7 @@ header {
     transition: all 0.3s ease;
     border: 1px solid #f5efef;
     border-radius: 8px;
-    padding: 6px 6px;
+    padding: 8px;
     display: inline-block;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -105,7 +106,7 @@ body.dark-mode .head-page a {
     align-items: center;
     border: 1px solid transparent;
     border-radius: 999px;
-    padding: 6px 10px;
+    padding: 4px 10px;
     width: 40px;
     overflow: hidden;
     transition: all 0.3s ease;
