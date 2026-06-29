@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hospital Dashboard</title>
+
+    <link rel="stylesheet" href="../assets/style/dashboard.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <h2>ADMIN</h2>
+            </div>
+
+            <a href="admin.html" class="active">
+                <i class="fa-solid fa-house"></i>
+            </a>
+
+            <a href="patients.html">
+                <i class="fa-solid fa-users"></i>
+            </a>
+
+            <a href="doctors.html">
+                <i class="fa-solid fa-user-doctor"></i>
+            </a>
+
+            <a href="appointments.html">
+                <i class="fa-solid fa-calendar"></i>
+            </a>
+
+            <a href="reports.html">
+                <i class="fa-solid fa-chart-column"></i>
+            </a>
+
+            <a href="settings.html">
+                <i class="fa-solid fa-gear"></i>
+            </a>
+
+            <!-- <a href="#" onclick="logout(event)">
+                <i class="fa-solid fa-right-from-bracket"></i>
+            </a> -->
+            <a href="/dashboard/login.html">
+                 <i class="fa-solid fa-right-from-bracket"></i>
+            </a>
+
+        </aside>
+
+        <!-- Main -->
+        <main class="main">
+
+            <!-- Header -->
+            <div class="header">
+
+                <div class="search">
+                    <input type="text" placeholder="Search patients, doctors...">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+
+                <div class="profile">
+
+                    <img src="https://i.pravatar.cc/100">
+
+                    <div>
+                        <h4 id="profileName">
+                            Administrator
+                        </h4>
+
+                        <span>Hospital Admin</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Welcome -->
+            <div class="welcome">
+
+                <div>
+                    <h1>Welcome Back 👋</h1>
+
+                    <p>
+                        Hospital Management Dashboard
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Statistics Cards -->
+
+            <div class="cards">
+
+                <div class="card">
+                    <h4>Total Patients</h4>
+                    <h2 id="totalPatients">0</h2>
+                </div>
+
+                <div class="card">
+                    <h4>Total Doctors</h4>
+                    <h2 id="totalDoctors">0</h2>
+                </div>
+
+                <div class="card">
+                    <h4>Appointments</h4>
+                    <h2 id="totalAppointments">0</h2>
+                </div>
+
+                <div class="card">
+                    <h4>Revenue</h4>
+                    <h2 id="totalRevenue">$0</h2>
+                </div>
+
+            </div>
+
+            <!-- Charts -->
+
+            <!-- <div class="chart-section">
+
+                <div class="chart-card">
+                    <h3>Monthly Revenue</h3>
+                    <canvas id="revenueChart"></canvas>
+                </div>
+
+                <div class="chart-card">
+                    <h3>Patients Analytics</h3>
+                    <canvas id="patientChart"></canvas>
+                </div>
+
+            </div> -->
+
+            <!-- Recent Appointments -->
+
+            <div class="table-card">
+
+                <h3>Recent Appointments</h3>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Patient</th>
+                            <th>Doctor</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="appointmentTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="../dashboardJS/admindashboard.js"></script>
+
+</body>
+
+</html>
