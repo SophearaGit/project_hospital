@@ -8,6 +8,7 @@
     <title>Hospital Dashboard</title>
 
     <link rel="stylesheet" href="../assets/style/dashboard.css">
+    <link rel="stylesheet" href="../assets/responsive/dashboardres.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
@@ -17,77 +18,94 @@
 <body>
 
     <div class="container">
-
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+        </button>
         <!-- Sidebar -->
-        <aside class="sidebar">
+        <aside class="sidebar" id="aside-active">
 
             <div class="logo">
                 <h2>ADMIN</h2>
+                <!-- <img src="/assets/images/admin.png" alt=""> -->
             </div>
 
-            <a href="admin.html" class="active">
+            <a href="admin.html">
                 <i class="fa-solid fa-house"></i>
+                Dashboard
             </a>
 
             <a href="patients.html">
                 <i class="fa-solid fa-users"></i>
+                Patients
             </a>
 
             <a href="doctors.html">
                 <i class="fa-solid fa-user-doctor"></i>
+                Doctors
             </a>
 
             <a href="appointments.html">
                 <i class="fa-solid fa-calendar"></i>
+                Appointments
             </a>
 
             <a href="reports.html">
                 <i class="fa-solid fa-chart-column"></i>
+                Reports
             </a>
 
             <a href="settings.html">
                 <i class="fa-solid fa-gear"></i>
+                Settings
             </a>
 
             <!-- <a href="#" onclick="logout(event)">
                 <i class="fa-solid fa-right-from-bracket"></i>
             </a> -->
             <a href="/dashboard/login.html">
-                 <i class="fa-solid fa-right-from-bracket"></i>
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Log Out
             </a>
+
+            <div class="logo-dashboard">
+                <img src="../assets/images/login.png" alt="">
+                <p>
+                    We care for your <span>Health</span>
+                    Your health is our priority.
+                </p>
+            </div>
 
         </aside>
 
         <!-- Main -->
         <main class="main">
-
             <!-- Header -->
             <div class="header">
-
                 <div class="search">
                     <input type="text" placeholder="Search patients, doctors...">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
                 </div>
 
                 <div class="profile">
-
-                    <img src="https://i.pravatar.cc/100">
-
-                    <div>
-                        <h4 id="profileName">
-                            Administrator
-                        </h4>
-
-                        <span>Hospital Admin</span>
+                    <div class="mode-icon">
+                        <i id="theme-toggle" class="fa-regular fa-moon"></i>
                     </div>
 
-                </div>
+                    <div class="pro-info">
+                        <img src="https://i.pravatar.cc/100">
 
+                        <div class="info-name">
+                            <h4 id="profileName">
+                                Administrator
+                            </h4>
+                            <span>Hospital Admin</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Welcome -->
             <div class="welcome">
-
                 <div>
                     <h1>Welcome Back 👋</h1>
 
@@ -95,13 +113,10 @@
                         Hospital Management Dashboard
                     </p>
                 </div>
-
             </div>
 
             <!-- Statistics Cards -->
-
             <div class="cards">
-
                 <div class="card">
                     <h4>Total Patients</h4>
                     <h2 id="totalPatients">0</h2>
@@ -121,7 +136,6 @@
                     <h4>Revenue</h4>
                     <h2 id="totalRevenue">$0</h2>
                 </div>
-
             </div>
 
             <!-- Charts -->
@@ -143,11 +157,8 @@
             <!-- Recent Appointments -->
 
             <div class="table-card">
-
                 <h3>Recent Appointments</h3>
-
                 <table>
-
                     <thead>
                         <tr>
                             <th>Patient</th>
@@ -158,19 +169,14 @@
                     </thead>
 
                     <tbody id="appointmentTable">
-
                     </tbody>
-
                 </table>
-
             </div>
-
         </main>
-
     </div>
 
-    <script src="../dashboardJS/admindashboard.js"></script>
-
+    <script src="../assets/script/script.js" type="module"></script>
+    <script src="../adminJS/admindashboard.js"></script>
 </body>
 
 </html>
