@@ -4,25 +4,21 @@
     --accent-color: #3b82f6;
 }
 
-/* --- 2. DARK MODE VARIABLES --- */
 body.dark-mode {
     --bg-color: #121212;
     --text-color: #f5f5f5;
     --accent-color: #60a5fa;
 }
 
-/* --- 3. APPLY VARIABLES TO YOUR STYLES --- */
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    /* Smooth fading transition when changing modes */
-    transition: background-color 0.3s ease, color 0.3s ease; 
+    transition: background-color 0.3s ease, color 0.3s ease;
     margin: 0;
+    padding: 0;
 }
 
-/* Main Layout Wrapper Container */
 .about-page {
-    /* Keeps requested horizontal spacing and handles vertical gaps safely */
     margin-inline: 15%;
     margin-block: 2rem; 
     padding: 3rem 2rem;
@@ -30,7 +26,6 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* --- 1. TOP ROW: HERO & INTRO BLOCK --- */
 .top-row {
     display: flex;
     justify-content: space-between;

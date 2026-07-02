@@ -203,7 +203,6 @@ document.addEventListener("DOMContentLoaded", () => {
     stats.forEach(stat => observer.observe(stat));
 });
 
-
 // all doctor 
 document.addEventListener("DOMContentLoaded", () => {
     const doctorsGrid = document.getElementById("doctorsGrid");
@@ -248,7 +247,7 @@ document.addEventListener("DOMContentLoaded", () => {
                       </div>
 
                       <button class="book-btn">
-                        <a href="contact_us.html">
+                        <a href="contact.html">
                           <i style="font-size:24px" class="fas">&#xf0b1;</i>
                           <span>Book Appointment</span>
                         </a>
