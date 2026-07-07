@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="../assets/style/main_doctor.css">
+    <link rel="stylesheet" href="../assets/style/patient_doctor.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
@@ -36,7 +37,7 @@
                     Patients
                 </a>
 
-                <a href="patient_doctor.html">
+                <a href="schedule_doctor.html">
                     <i class="fa-regular fa-calendar"></i>
                     Schedules
                 </a>
@@ -46,9 +47,9 @@
                     Prescriptions
                 </a>
 
-                <a href="message_doctor.html">
-                    <i class="fa-regular fa-calendar"></i>
-                    Messages
+                <a href="history_doctor.html">
+                    <i class="fa-solid fa-file-medical"></i>
+                    History
                 </a>
 
                 <a href="report_doctor.html">
@@ -78,9 +79,100 @@
         </aside>
 
 
-        <main>
-            
+        <main class="main">
+            <!-- Header -->
+            <div class="header">
+                <!-- menu -->
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="head-right">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <div class="mode-icon">
+                        <i id="theme-toggle" class="fa-regular fa-moon"></i>
+                    </div>
+
+                    <div class="avata">
+                        <img src="https://i.pravatar.cc/100">
+                        <h5>Dr. Sarah Johnson</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Appointment Content -->
+            <div class="page-content">
+
+                <div class="page-title">
+                    <div>
+                        <h2>Patients</h2>
+                        <p>View and manage all appointments.</p>
+                    </div>
+
+                    <button class="add-btn">
+                        <i class="fa-solid fa-plus"></i>
+                        New Patient
+                    </button>
+                </div>
+
+                <div class="filter-bar">
+                    <div class="filter-patient">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <span>seacrh patients...</span>
+                    </div>
+
+                    <select>
+                        <option>All Status</option>
+                        <option>Confirmed</option>
+                        <option>Pending</option>
+                        <option>Cancelled</option>
+                    </select>
+                </div>
+
+                <div class="table-card">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Patient</th>
+                                <th>Age</th>
+                                <th>Gender</th>
+                                <th>Phone</th>
+                                <th>Last Visit</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td class="patient">
+                                    <img src="https://i.pravatar.cc/40?img=1">
+                                    John Smith
+                                </td>
+
+                                <td>21</td>
+
+                                <td>Male</td>
+
+                                <td>+855 964 022 342</td>
+
+                                <td>May 31 2026</td>
+
+                                <td>Padding</td>
+
+                                <td>
+                                    <i class="fa-solid fa-ellipsis"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </main>
     </div>
+
+    <script src="../doctorJS/main_doctordash.js"></script>
+    <script src="../assets/script/script.js" type="module"></script>
 </body>
 </html>

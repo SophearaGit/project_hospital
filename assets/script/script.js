@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const targetNumber = parseInt(text.replace(/[^0-9]/g, ""), 10);
 
-        const suffix = text.replace(/[0-9,]/g, ""); 
+        const suffix = text.replace(/[0-9,]/g, "");
 
         if (isNaN(targetNumber)) return;
 
@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (currentFrame >= totalFrames) {
                 clearInterval(counter);
-                element.innerText = text; 
+                element.innerText = text;
             } else {
                 element.innerText = Math.floor(start) + suffix;
             }
@@ -192,12 +192,12 @@ document.addEventListener("DOMContentLoaded", () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 animateCounter(entry.target);
-                observer.unobserve(entry.target); 
+                observer.unobserve(entry.target);
             }
         });
-    }, { 
-        threshold: 0.1, 
-        rootMargin: "0px 0px -50px 0px" 
+    }, {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
     });
 
     stats.forEach(stat => observer.observe(stat));
@@ -205,122 +205,107 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // all doctor 
 document.addEventListener("DOMContentLoaded", () => {
-    const doctorsGrid = document.getElementById("doctorsGrid");
-    const viewAllBtn = document.querySelector(".btn button"); 
 
-    if (doctorsGrid) {
-        let visibleCount = 6; 
+    const grid = document.getElementById("doctorsGrid");
+    const firstCard = document.getElementById("doctorCard");
+    const viewAllBtn = document.querySelector(".btn button");
 
-        function renderDoctors() {
-            let cardHTML = "";
-            
-            const itemsToShow = doctorData.slice(0, visibleCount);
+    let visibleCount = 6;
 
-            itemsToShow.forEach(doctor => {
-                cardHTML += `
-                    <div class="doctor-card">
-                      <div class="doctor-avatar">
-                        <img src="${doctor.image}" alt="${doctor.name}">
-                      </div>
+    function renderDoctors() {
 
-                      <div class="doctor-info">
-                        <h3>${doctor.name}</h3>
-                        <p>${doctor.specialty}</p>
-                      </div>
+        grid.querySelectorAll(".doctor-card:not(#doctorCard)").forEach(card => card.remove());
 
-                      <div class="doctor-rating">
-                        <i class="fa-solid fa-star"></i>
-                        <div class="rating">
-                          ${doctor.rating} <span>(${doctor.reviews || 201})</span>
-                        </div>
-                      </div>
+        const items = doctorData.slice(0, visibleCount);
 
-                      <div class="doctor-meta">
-                        <div class="meta">
-                          <span>Experience</span>
-                          <span>${doctor.experience}</span>
-                        </div>
-                        <div class="meta">
-                          <span>Available</span>
-                          <span>${doctor.availability || 'Mon, Wed, Fri'}</span>
-                        </div>
-                      </div>
+        items.forEach((doctor, index) => {
 
-                      <button class="book-btn">
-                        <a href="contact.html">
-                          <i style="font-size:24px" class="fas">&#xf0b1;</i>
-                          <span>Book Appointment</span>
-                        </a>
-                      </button>
-                    </div>
-                `;
-            });
+            let card;
 
-            doctorsGrid.innerHTML = cardHTML;
-
-            if (viewAllBtn && visibleCount >= doctorData.length) {
-                viewAllBtn.style.display = "none";
+            if (index === 0) {
+                card = firstCard;
+            } else {
+                card = firstCard.cloneNode(true);
+                grid.appendChild(card);
             }
-        }
 
-        renderDoctors();
+            card.querySelector(".doctorImage").src = doctor.image;
+            card.querySelector(".doctorImage").alt = doctor.name;
 
-        if (viewAllBtn) {
-            viewAllBtn.addEventListener("click", () => {
-                visibleCount += 6;
-                renderDoctors(); 
-            });
+            card.querySelector(".doctorName").textContent = doctor.name;
+            card.querySelector(".doctorDepartment").textContent = doctor.department;
+            card.querySelector(".doctorRating").textContent = doctor.rating;
+            card.querySelector(".doctorExperience").textContent = doctor.experience;
+            card.querySelector(".doctorAvailable").textContent =
+                doctor.available ? "Available" : "Unavailable";
+        });
+
+        if (visibleCount >= doctorData.length) {
+            viewAllBtn.style.display = "none";
+        } else {
+            viewAllBtn.style.display = "block";
         }
     }
+
+    renderDoctors();
+
+    viewAllBtn.addEventListener("click", () => {
+        visibleCount += 6;
+        renderDoctors();
+    });
+
 });
 
 // all departments
 document.addEventListener("DOMContentLoaded", () => {
-  const departmentsGrid = document.getElementById("departmentsGrid");
-  const viewAllBtn = document.querySelector(".btn button"); // ចាប់យកប៊ូតុង View All
 
-  if (departmentsGrid) {
-    let visibleCount = 6; 
+    const departmentsGrid = document.getElementById("departmentsGrid");
+    const firstCard = document.getElementById("depCard");
+    const viewAllBtn = document.getElementById("viewAllBtn");
+
+    let visibleCount = 6;
 
     function renderDepartments() {
-      let depHTML = "";
-      
-      const itemsToShow = departmentData.slice(0, visibleCount);
 
-      itemsToShow.forEach(dep => {
-        depHTML += `
-          <div class="dep-card">
-              <div class="department">
-                <div class="dep-img">
-                  <img src="${dep.managerImage}" alt="${dep.managerName}">
-                  <h4>${dep.managerName}</h4>
-                </div>
-                <div class="dep-title">
-                  <p>${dep.title}</p>
-                  <p class="dep-des">${dep.description}</p>
-                  <button>${dep.linkText}</button>
-                </div>
-              </div>
-            </div>
-        `;
-      });
+        // លុប Card ដែលបាន Clone ពីមុន
+        departmentsGrid.querySelectorAll(".dep-card:not(#depCard)").forEach(card => card.remove());
 
-      departmentsGrid.innerHTML = depHTML;
+        const items = departmentData.slice(0, visibleCount);
 
-      if (viewAllBtn && visibleCount >= departmentData.length) {
-        viewAllBtn.style.display = "none"; 
-      }
+        items.forEach((dep, index) => {
+
+            let card;
+
+            if (index === 0) {
+                card = firstCard;
+            } else {
+                card = firstCard.cloneNode(true);
+                departmentsGrid.appendChild(card);
+            }
+
+            card.querySelector(".managerImage").src = dep.managerImage;
+            card.querySelector(".managerImage").alt = dep.managerName;
+
+            card.querySelector(".managerName").textContent = dep.managerName;
+            card.querySelector(".departmentTitle").textContent = dep.title;
+            card.querySelector(".dep-des").textContent = dep.description;
+            card.querySelector(".departmentBtn").textContent = dep.linkText;
+        });
+
+        if (visibleCount >= departmentData.length) {
+            viewAllBtn.style.display = "none";
+        } else {
+            viewAllBtn.style.display = "block";
+        }
     }
 
     renderDepartments();
 
-    if (viewAllBtn) {
-      viewAllBtn.addEventListener("click", () => {
-        visibleCount += 6; 
+    viewAllBtn.addEventListener("click", () => {
+        visibleCount += 6;
         renderDepartments();
-      });
-    }
-  }
+    });
+
 });
 
 
