@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.getElementById('menuToggle');
-    const sidebar = document.getElementById('aside-active'); // ប្រើ ID របស់អ្នក
+    const sidebar = document.getElementById('aside-active');
 
     menuToggle.addEventListener('click', (e) => {
         sidebar.classList.toggle('open');

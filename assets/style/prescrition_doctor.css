@@ -79,6 +79,27 @@ body {
     background: white;
 }
 
+.filter-patient {
+    border: 1px solid rgb(200, 198, 198);
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    gap: 20px;
+    width: 300px;
+    color: rgb(91, 90, 90);
+}
+
+body.dark-mode .filter-patient {
+    border: 1px solid;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    gap: 20px;
+    width: 300px;
+    color: rgb(91, 90, 90);
+    background: white;
+}
+
 .table-card {
     background: white;
     border-radius: 15px;
