@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Doctors Management</title>
+    <link rel="stylesheet" href="./assets/style/aside.css" />
+    <link rel="stylesheet" href="./assets/style/main_admin.css" />
+    <link rel="stylesheet" href="../assets/style/doctors_admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Sidebar -->
+      <aside class="aside">
+        <div class="title-head">
+          <i class="fa-solid fa-heart-pulse"></i>
+          <div class="title">
+            <span>CarePlus</span>
+            <span>Doctor Pannel</span>
+          </div>
+        </div>
+
+        <div class="aside-head">
+          <div class="upper-head">
+            <a href="main_admin.html">
+              <i class="fa-solid fa-house"></i>
+              Dashboard
+            </a>
+
+            <div class="dropdown">
+              <button class="dropbtn">
+                <i class="fa-solid fa-users"></i>
+                Users
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="dropdown-content">
+                <a href="patients_admin.html">
+                  <i class="fa-solid fa-user"></i>
+                  Patients
+                </a>
+
+                <a href="department_admin.html">
+                  <i class="fa-solid fa-building-user"></i>
+                  Departments
+                </a>
+
+                <a href="doctors_admin.html">
+                  <i class="fa-solid fa-user-doctor"></i>
+                  Doctors
+                </a>
+
+                <a href="appointments_admin.html">
+                  <i class="fa-solid fa-calendar-check"></i>
+                  Appointments
+                </a>
+              </div>
+            </div>
+
+            <a href="reports_admin.html">
+              <i class="fa-solid fa-chart-column"></i>
+              Reports
+            </a>
+
+            <a href="settings.html">
+              <i class="fa-solid fa-gear"></i>
+              Settings
+            </a>
+          </div>
+
+          <div class="under-head">
+            <a href="http://">
+              <i class="fa-regular fa-circle-question"></i>
+              Support
+            </a>
+            <a href="login.html">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              Log Out
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <div class="header">
+          <!-- Left -->
+          <button class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <!-- Center -->
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search patients, records..." />
+          </div>
+
+          <!-- Right -->
+          <div class="right-header">
+            <!-- Dark Mode -->
+            <div class="mode-icon">
+              <i id="theme-toggle" class="fa-regular fa-moon"></i>
+            </div>
+
+            <!-- Notification -->
+            <div class="notification">
+              <i class="fa-solid fa-bell"></i>
+              <span class="dot"></span>
+            </div>
+
+            <!-- Profile -->
+            <div class="profile">
+              <img src="https://i.pravatar.cc/100" alt="" />
+              <div class="info-name">
+                <h4 id="profileName">Administrator</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add Doctor Form -->
+        <!-- <div class="form-card">
+          <h3>Add Doctor</h3>
+          <form id="doctorForm">
+            <input
+              type="text"
+              id="doctorName"
+              placeholder="Doctor Name"
+              required
+            />
+
+            <input
+              type="text"
+              id="specialization"
+              placeholder="Specialization"
+              required
+            />
+
+            <input type="text" id="phone" placeholder="Phone Number" required />
+
+            <button type="submit">Save Doctor</button>
+          </form>
+        </div> -->
+
+        <!-- Doctor Table -->
+        <!-- <div class="table-card">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Specialization</th>
+                <th>Phone</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody id="doctorTable"></tbody>
+          </table>
+        </div> -->
+
+        <div class="container-card">
+          <!-- Add Doctor -->
+          <div class="add-doctor_admin">
+            <div class="left-addbtn">
+              <h1>Add Doctors</h1>
+              <p>gesgthbgn</p>
+            </div>
+            <button>
+              <a href="./add_doctors_admin.html">+ New Doctors</a>
+            </button>
+          </div>
+
+          <!-- Header Doctor for Department -->
+          <div class="head-card">
+            <button>ALL</button>
+            <button>CARDIOLOGY</button>
+            <button>ORTHOPEDICS</button>
+            <button>CONCOLOGY</button>
+            <button>DERMETOLOGY</button>
+            <button>SERQRY</button>
+            <button>GYNOCOLOGY</button>
+          </div>
+
+          <div class="main-card">
+            <!-- card 1 -->
+            <div class="doctor-card">
+              <div class="doctor-rating">
+                <i class="fa-solid fa-star"></i>
+                <div class="rating">
+                  <span></span>
+                </div>
+              </div>
+
+              <div class="doctor-avatar">
+                <img src="" alt="" />
+              </div>
+
+              <div class="doctor-info">
+                <h3></h3>
+                <p></p>
+              </div>
+
+              <div class="depart-info"></div>
+
+              <div class="meta">
+                <button>
+                  <i class="fa-solid fa-calendar-check"></i>
+                </button>
+
+                <button>
+                  <i class="fa-solid fa-phone"></i>
+                  Make a call
+                </button>
+              </div>
+            </div>
+            <!-- card 2 -->
+            <div class="doctor-card">
+              <div class="doctor-rating">
+                <i class="fa-solid fa-star"></i>
+                <div class="rating">
+                  4.8
+                  <span>(201)</span>
+                </div>
+              </div>
+
+              <div class="doctor-avatar">
+                <img src="./assets/images/top-doctor1.jpg" alt="" />
+              </div>
+
+              <div class="doctor-info">
+                <h3>Dr. Robert Anderson</h3>
+                <p>1288 Natilio Brook Api. 966</p>
+              </div>
+
+              <div class="depart-info">GYNOCOLOGY</div>
+
+              <div class="meta">
+                <button>
+                  <i class="fa-solid fa-calendar-check"></i>
+                  Availability
+                </button>
+
+                <button>
+                  <i class="fa-solid fa-phone"></i>
+                  Make a call
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../assets/script/script.js" type="module"></script>
+    <script src="./assets/script/doctors_admin.js"></script>
+    <script src="./assets/script/menu_dashboard.js"></script>
+    <script src="./assets/script/dropdown_dashboard.js"></script>
+  </body>
+</html>

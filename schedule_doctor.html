@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./assets/style/aside.css" />
+    <link rel="stylesheet" href="../assets/style/main_doctor.css" />
+    <link rel="stylesheet" href="/assets/style/schedule_doctor.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- aside -->
+      <aside class="aside">
+        <div class="title-head">
+          <i class="fa-solid fa-heart-pulse"></i>
+          <div class="title">
+            <span>CarePlus</span>
+            <span>Doctor Pannel</span>
+          </div>
+        </div>
+
+        <div class="aside-head">
+          <div class="upper-head">
+            <a href="main_doctor.html">
+              <i class="fa-solid fa-house"></i>
+              Dashboard
+            </a>
+
+            <a href="appointments_doctor.html">
+              <i class="fa-solid fa-calendar"></i>
+              Appointments
+            </a>
+
+            <a href="patient_doctor.html">
+              <i class="fa-solid fa-users"></i>
+              Patients
+            </a>
+
+            <a href="schedule_doctor.html">
+              <i class="fa-regular fa-calendar"></i>
+              Schedules
+            </a>
+
+            <a href="prescription_doctor.html">
+              <i class="fa-solid fa-file-prescription"></i>
+              Prescriptions
+            </a>
+
+            <a href="history_doctor.html">
+              <i class="fa-solid fa-file-medical"></i>
+              History
+            </a>
+
+            <!-- <div class="dropdown">
+              <button class="dropbtn">
+                <i class="fa-solid fa-users"></i>
+                Users
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="dropdown-content">
+                <a href="patients_admin.html">
+                  <i class="fa-solid fa-user"></i>
+                  Patients
+                </a>
+
+                <a href="doctors_admin.html">
+                  <i class="fa-solid fa-user-doctor"></i>
+                  Doctors
+                </a>
+
+                <a href="appointments_admin.html">
+                  <i class="fa-solid fa-calendar-check"></i>
+                  Appointments
+                </a>
+              </div>
+            </div> -->
+
+            <!-- <a href="reports_admin.html">
+              <i class="fa-solid fa-chart-column"></i>
+              Reports
+            </a> -->
+
+            <a href="settings.html">
+              <i class="fa-solid fa-gear"></i>
+              Settings
+            </a>
+          </div>
+
+          <div class="under-head">
+            <a href="http://">
+              <i class="fa-regular fa-circle-question"></i>
+              Support
+            </a>
+            <a href="login.html">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              Log Out
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <div class="header">
+          <button class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <!-- center -->
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search patients, records..." />
+          </div>
+
+          <!-- right -->
+          <div class="head-right">
+            <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+            <!-- Dark Mode -->
+            <div class="mode-icon">
+              <i id="theme-toggle" class="fa-regular fa-moon"></i>
+            </div>
+
+            <!-- Notification -->
+            <div class="notification">
+              <i class="fa-solid fa-bell"></i>
+              <span class="dot"></span>
+            </div>
+
+            <div class="avata">
+              <img src="https://i.pravatar.cc/100" />
+              <!-- <h5>Dr. Sarah Johnson</h5> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="page-content">
+          <div class="page-title">
+            <div class="title">
+              <h2>
+                <i class="fa-regular fa-calendar-days"></i>
+                Schedule & Calendar
+              </h2>
+
+              <p>View and manage your complete schedule</p>
+            </div>
+          </div>
+
+          <!-- Days -->
+          <div class="calendar-days">
+            <div class="day-card">
+              <span>Sunday</span>
+              <h3>10</h3>
+            </div>
+
+            <div class="day-card">
+              <span>Saturday</span>
+              <h3>7</h3>
+            </div>
+
+            <div class="day-card active">
+              <span>Monday</span>
+              <h3>11</h3>
+            </div>
+
+            <div class="day-card">
+              <span>Tuesday</span>
+              <h3>12</h3>
+            </div>
+
+            <div class="day-card">
+              <span>Wednesday</span>
+              <h3>13</h3>
+            </div>
+
+            <div class="day-card">
+              <span>Thursday</span>
+              <h3>14</h3>
+            </div>
+
+            <div class="day-card">
+              <span>Friday</span>
+              <h3>15</h3>
+            </div>
+          </div>
+
+          <!-- Schedule -->
+          <div class="schedule-card">
+            <h3>Monday, February 10</h3>
+
+            <div class="schedule-item">
+              <div class="time">
+                <i class="fa-regular fa-clock"></i>
+
+                <strong>08:00 AM</strong>
+              </div>
+
+              <div class="schedule-info">
+                <h4>Morning Rounds - Ward A</h4>
+
+                <span class="tag patient"> Patients </span>
+              </div>
+            </div>
+
+            <div class="schedule-item">
+              <div class="time">
+                <i class="fa-regular fa-clock"></i>
+
+                <strong>09:30 AM</strong>
+              </div>
+
+              <div class="schedule-info">
+                <h4>Surgery: Coronary Bypass</h4>
+
+                <span class="tag operation"> Operation </span>
+              </div>
+            </div>
+
+            <div class="schedule-item">
+              <div class="time">
+                <i class="fa-regular fa-clock"></i>
+
+                <strong>01:00 PM</strong>
+              </div>
+
+              <div class="schedule-info">
+                <h4>Patient Consultations</h4>
+
+                <span class="tag patient"> Patients </span>
+              </div>
+            </div>
+
+            <div class="schedule-item">
+              <div class="time">
+                <i class="fa-regular fa-clock"></i>
+
+                <strong>03:00 PM</strong>
+              </div>
+
+              <div class="schedule-info">
+                <h4>Cardiology Grand Rounds</h4>
+
+                <span class="tag academic"> Academic </span>
+              </div>
+            </div>
+
+            <div class="schedule-item">
+              <div class="time">
+                <i class="fa-regular fa-clock"></i>
+
+                <strong>05:00 PM</strong>
+              </div>
+
+              <div class="schedule-info">
+                <h4>Administrative Tasks</h4>
+
+                <span class="tag admin"> Admin </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../assets/script/script.js" type="module"></script>
+    <script src="../assets/script/main_doctordash.js"></script>
+  </body>
+</html>

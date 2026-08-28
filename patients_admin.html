@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Patients Management</title>
+    <link rel="stylesheet" href="./assets/style/aside.css" />
+    <link rel="stylesheet" href="./assets/style/main_admin.css" />
+    <link rel="stylesheet" href="../assets/style/patient.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Sidebar -->
+      <aside class="aside">
+        <div class="title-head">
+          <i class="fa-solid fa-heart-pulse"></i>
+          <div class="title">
+            <span>CarePlus</span>
+            <span>Doctor Pannel</span>
+          </div>
+        </div>
+
+        <div class="aside-head">
+          <div class="upper-head">
+            <a href="main_admin.html">
+              <i class="fa-solid fa-house"></i>
+              Dashboard
+            </a>
+
+            <div class="dropdown">
+              <button class="dropbtn">
+                <i class="fa-solid fa-users"></i>
+                Users
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="dropdown-content">
+                <a href="patients_admin.html">
+                  <i class="fa-solid fa-user"></i>
+                  Patients
+                </a>
+
+                <a href="department_admin.html">
+                  <i class="fa-solid fa-building-user"></i>
+                  Departments
+                </a>
+
+                <a href="doctors_admin.html">
+                  <i class="fa-solid fa-user-doctor"></i>
+                  Doctors
+                </a>
+
+                <a href="appointments_admin.html">
+                  <i class="fa-solid fa-calendar-check"></i>
+                  Appointments
+                </a>
+              </div>
+            </div>
+
+            <a href="reports_admin.html">
+              <i class="fa-solid fa-chart-column"></i>
+              Reports
+            </a>
+
+            <a href="settings.html">
+              <i class="fa-solid fa-gear"></i>
+              Settings
+            </a>
+          </div>
+
+          <div class="under-head">
+            <a href="http://">
+              <i class="fa-regular fa-circle-question"></i>
+              Support
+            </a>
+            <a href="login.html">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              Log Out
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <div class="header">
+          <!-- Left -->
+          <button class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <!-- Center -->
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search patients, records..." />
+          </div>
+
+          <!-- Right -->
+          <div class="right-header">
+            <!-- Dark Mode -->
+            <div class="mode-icon">
+              <i id="theme-toggle" class="fa-regular fa-moon"></i>
+            </div>
+
+            <!-- Notification -->
+            <div class="notification">
+              <i class="fa-solid fa-bell"></i>
+              <span class="dot"></span>
+            </div>
+
+            <!-- Profile -->
+            <div class="profile">
+              <img src="https://i.pravatar.cc/100" alt="" />
+              <div class="info-name">
+                <h4 id="profileName">Administrator</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+
+        <div class="form-card">
+          <h3>Add Patient</h3>
+
+          <form id="patientForm">
+            <input
+              type="text"
+              id="patientName"
+              placeholder="Patient Name"
+              required
+            />
+
+            <input type="number" id="patientAge" placeholder="Age" required />
+
+            <select id="patientGender">
+              <option value="Male">Male</option>
+
+              <option value="Female">Female</option>
+            </select>
+
+            <input
+              type="text"
+              id="patientPhone"
+              placeholder="Phone Number"
+              required
+            />
+
+            <button type="submit">Save Patient</button>
+          </form>
+        </div>
+
+        <!-- Table -->
+
+        <div class="table-card">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Phone</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody id="patientTable"></tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+
+    <script src="../assets/script/script.js" type="module"></script>
+    <script src="./assets/script/patients_admin.js"></script>
+    <script src="./assets/script/menu_dashboard.js"></script>
+  </body>
+</html>

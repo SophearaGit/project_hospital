@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../assets/style/main_doctor.css" />
+    <link rel="stylesheet" href="./assets/style/aside.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doctor Dashboard</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <aside class="aside">
+        <div class="title-head">
+          <i class="fa-solid fa-heart-pulse"></i>
+          <div class="title">
+            <span>CarePlus</span>
+            <span>Doctor Pannel</span>
+          </div>
+        </div>
+
+        <div class="aside-head">
+          <div class="upper-head">
+            <a href="main_doctor.html">
+              <i class="fa-solid fa-house"></i>
+              Dashboard
+            </a>
+
+            <a href="appointments_doctor.html">
+              <i class="fa-solid fa-calendar"></i>
+              Appointments
+            </a>
+
+            <a href="patient_doctor.html">
+              <i class="fa-solid fa-users"></i>
+              Patients
+            </a>
+
+            <a href="schedule_doctor.html">
+              <i class="fa-regular fa-calendar"></i>
+              Schedules
+            </a>
+
+            <a href="prescription_doctor.html">
+              <i class="fa-solid fa-file-prescription"></i>
+              Prescriptions
+            </a>
+
+            <a href="history_doctor.html">
+              <i class="fa-solid fa-file-medical"></i>
+              History
+            </a>
+
+            <!-- <div class="dropdown">
+              <button class="dropbtn">
+                <i class="fa-solid fa-users"></i>
+                Users
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="dropdown-content">
+                <a href="patients_admin.html">
+                  <i class="fa-solid fa-user"></i>
+                  Patients
+                </a>
+
+                <a href="doctors_admin.html">
+                  <i class="fa-solid fa-user-doctor"></i>
+                  Doctors
+                </a>
+
+                <a href="appointments_admin.html">
+                  <i class="fa-solid fa-calendar-check"></i>
+                  Appointments
+                </a>
+              </div>
+            </div> -->
+
+            <!-- <a href="reports_admin.html">
+              <i class="fa-solid fa-chart-column"></i>
+              Reports
+            </a> -->
+
+            <a href="settings.html">
+              <i class="fa-solid fa-gear"></i>
+              Settings
+            </a>
+          </div>
+
+          <div class="under-head">
+            <div class="avatar-user">
+              <div class="avatar-user-photo">
+                <img src="./assets/images/top-doctor2.jpg" alt="" />
+              </div>
+              <p>Dr. Jonh</p>
+            </div>
+
+            <a href="http://">
+              <i class="fa-regular fa-circle-question"></i>
+              Support
+            </a>
+            <a href="login.html">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              Log Out
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <!-- main -->
+      <main class="main">
+        <!-- header -->
+        <div class="header">
+          <button class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <!-- center -->
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search patients, records..." />
+          </div>
+
+          <!-- right -->
+          <div class="head-right">
+            <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+            <!-- Dark Mode -->
+            <div class="mode-icon">
+              <i id="theme-toggle" class="fa-regular fa-moon"></i>
+            </div>
+
+            <!-- Notification -->
+            <div class="notification">
+              <i class="fa-solid fa-bell"></i>
+              <span class="dot"></span>
+            </div>
+
+            <div class="avata">
+              <img src="https://i.pravatar.cc/100" />
+              <!-- <h5>Dr. Sarah Johnson</h5> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="container-main">
+          <!-- Welcome  -->
+          <div class="info-wel">
+            <h1>Welcome back, Dr. Sarah Johnson</h1>
+            <p>Here's what's happening with your practice today.</p>
+          </div>
+
+          <!-- Statistics Cards -->
+          <div class="cards">
+            <div class="card">
+              <i class="fa-regular fa-calendar"></i>
+
+              <div>
+                <h4>Total's Appointments</h4>
+                <h2 id="totalAppointments">0</h2>
+                <p>3 upcoming</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <i class="fa-solid fa-users"></i>
+
+              <div>
+                <h4>Patients</h4>
+                <h2 id="totalPatients">0</h2>
+                <p>Total patients</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <i class="fa-solid fa-file-prescription"></i>
+
+              <div>
+                <h4>Prescriptions</h4>
+                <h2 id="totalPrescriptions">0</h2>
+                <p>This month</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <i class="fa-regular fa-comment"></i>
+
+              <div>
+                <h4>Messages</h4>
+                <h2 id="totalMessages">0</h2>
+                <p>Unread messages</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="dashboard-grid">
+            <!-- 1. Today's Appointments -->
+            <div class="card">
+              <div class="card-header">
+                <h2 class="card-title">Today's Appointments</h2>
+                <a href="#" class="card-action">View all</a>
+              </div>
+              <div class="appointment-list">
+                <!-- Row 1 -->
+                <div class="appointment-row">
+                  <img
+                    class="avatar"
+                    src="https://i.pravatar.cc/100?img=12"
+                    alt="John Smith"
+                  />
+                  <div class="name">John Smith</div>
+                  <div class="time">09:00 AM</div>
+                  <div class="reason">Regular Checkup</div>
+                  <div class="badge confirmed">Confirmed</div>
+                </div>
+                <!-- Row 2 -->
+                <div class="appointment-row">
+                  <img
+                    class="avatar"
+                    src="https://i.pravatar.cc/100?img=47"
+                    alt="Emily Davis"
+                  />
+                  <div class="name">Emily Davis</div>
+                  <div class="time">10:30 AM</div>
+                  <div class="reason">Follow-up</div>
+                  <div class="badge confirmed">Confirmed</div>
+                </div>
+                <!-- Row 3 -->
+                <div class="appointment-row">
+                  <img
+                    class="avatar"
+                    src="https://i.pravatar.cc/100?img=13"
+                    alt="Michael Brown"
+                  />
+                  <div class="name">Michael Brown</div>
+                  <div class="time">11:30 AM</div>
+                  <div class="reason">Consultation</div>
+                  <div class="badge pending">Pending</div>
+                </div>
+                <!-- Row 4 -->
+                <div class="appointment-row">
+                  <img
+                    class="avatar"
+                    src="https://i.pravatar.cc/100?img=32"
+                    alt="Jessica Wilson"
+                  />
+                  <div class="name">Jessica Wilson</div>
+                  <div class="time">02:00 PM</div>
+                  <div class="reason">Headache</div>
+                  <div class="badge confirmed">Confirmed</div>
+                </div>
+                <!-- Row 5 -->
+                <div class="appointment-row">
+                  <img
+                    class="avatar"
+                    src="https://i.pravatar.cc/100?img=59"
+                    alt="David Lee"
+                  />
+                  <div class="name">David Lee</div>
+                  <div class="time">03:30 PM</div>
+                  <div class="reason">Flu Symptoms</div>
+                  <div class="badge pending">Pending</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Schedule Overview -->
+            <div class="card">
+              <div class="card-header">
+                <h2 class="card-title">Schedule Overview</h2>
+                <a href="#" class="card-action">View calendar</a>
+              </div>
+              <div class="timeline">
+                <!-- Item 1 -->
+                <div class="timeline-item">
+                  <div class="timeline-time">09:00 AM</div>
+                  <div class="timeline-divider">
+                    <div class="timeline-dot dot-blue"></div>
+                  </div>
+                  <div class="timeline-content-card">
+                    <div class="timeline-name">John Smith</div>
+                    <div class="timeline-reason">Regular Checkup</div>
+                  </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="timeline-item">
+                  <div class="timeline-time">10:30 AM</div>
+                  <div class="timeline-divider">
+                    <div class="timeline-dot dot-blue"></div>
+                  </div>
+                  <div class="timeline-content-card">
+                    <div class="timeline-name">Emily Davis</div>
+                    <div class="timeline-reason">Follow-up</div>
+                  </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="timeline-item">
+                  <div class="timeline-time">11:30 AM</div>
+                  <div class="timeline-divider">
+                    <div class="timeline-dot dot-orange"></div>
+                  </div>
+                  <div class="timeline-content-card">
+                    <div class="timeline-name">Michael Brown</div>
+                    <div class="timeline-reason">Consultation</div>
+                  </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="timeline-item">
+                  <div class="timeline-time">02:00 PM</div>
+                  <div class="timeline-divider">
+                    <div class="timeline-dot dot-green"></div>
+                  </div>
+                  <div class="timeline-content-card">
+                    <div class="timeline-name">Jessica Wilson</div>
+                    <div class="timeline-reason">Headache</div>
+                  </div>
+                </div>
+                <!-- Item 5 -->
+                <div class="timeline-item">
+                  <div class="timeline-time">03:30 PM</div>
+                  <div class="timeline-divider">
+                    <div class="timeline-dot dot-green"></div>
+                  </div>
+                  <div class="timeline-content-card">
+                    <div class="timeline-name">David Lee</div>
+                    <div class="timeline-reason">Flu Symptoms</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Recent Prescriptions -->
+            <div class="card">
+              <div class="card-header">
+                <h2 class="card-title">Recent Prescriptions</h2>
+                <a href="#" class="card-action">View all &gt;</a>
+              </div>
+              <div class="prescription-list">
+                <!-- Row 1 -->
+                <div class="prescription-row">
+                  <div class="icon-container">
+                    <svg class="prescription-icon" viewBox="0 0 24 24">
+                      <path
+                        d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="name">John Smith</div>
+                  <div class="medication">Amoxicillin 500mg</div>
+                  <div class="date">May 21, 2024</div>
+                </div>
+                <!-- Row 2 -->
+                <div class="prescription-row">
+                  <div class="icon-container">
+                    <svg class="prescription-icon" viewBox="0 0 24 24">
+                      <path
+                        d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="name">Emily Davis</div>
+                  <div class="medication">Ibuprofen 400mg</div>
+                  <div class="date">May 21, 2024</div>
+                </div>
+                <!-- Row 3 -->
+                <div class="prescription-row">
+                  <div class="icon-container">
+                    <svg class="prescription-icon" viewBox="0 0 24 24">
+                      <path
+                        d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="name">Michael Brown</div>
+                  <div class="medication">Cetirizine 10mg</div>
+                  <div class="date">May 20, 2024</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../assets/script/script.js" type="module"></script>
+    <script src="./assets/script/menu_dashboard.js"></script>
+  </body>
+</html>

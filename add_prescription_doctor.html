@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style/aside.css" />
+    <link rel="stylesheet" href="../assets/style/main_doctor.css" />
+    <link rel="stylesheet" href="../assets/style/patient_doctor.css" />
+    <link rel="stylesheet" href="../assets/style/add_patient_doctor.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <title>Prescription</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <aside class="aside">
+        <div class="title-head">
+          <i class="fa-solid fa-heart-pulse"></i>
+          <div class="title">
+            <span>CarePlus</span>
+            <span>Doctor Pannel</span>
+          </div>
+        </div>
+
+        <div class="aside-head">
+          <div class="upper-head">
+            <a href="main_doctor.html">
+              <i class="fa-solid fa-house"></i>
+              Dashboard
+            </a>
+
+            <a href="appointments_doctor.html">
+              <i class="fa-solid fa-calendar"></i>
+              Appointments
+            </a>
+
+            <a href="patient_doctor.html">
+              <i class="fa-solid fa-users"></i>
+              Patients
+            </a>
+
+            <a href="schedule_doctor.html">
+              <i class="fa-regular fa-calendar"></i>
+              Schedules
+            </a>
+
+            <a href="prescription_doctor.html">
+              <i class="fa-solid fa-file-prescription"></i>
+              Prescriptions
+            </a>
+
+            <a href="history_doctor.html">
+              <i class="fa-solid fa-file-medical"></i>
+              History
+            </a>
+
+            <!-- <div class="dropdown">
+              <button class="dropbtn">
+                <i class="fa-solid fa-users"></i>
+                Users
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="dropdown-content">
+                <a href="patients_admin.html">
+                  <i class="fa-solid fa-user"></i>
+                  Patients
+                </a>
+
+                <a href="doctors_admin.html">
+                  <i class="fa-solid fa-user-doctor"></i>
+                  Doctors
+                </a>
+
+                <a href="appointments_admin.html">
+                  <i class="fa-solid fa-calendar-check"></i>
+                  Appointments
+                </a>
+              </div>
+            </div> -->
+
+            <!-- <a href="reports_admin.html">
+              <i class="fa-solid fa-chart-column"></i>
+              Reports
+            </a> -->
+
+            <a href="settings.html">
+              <i class="fa-solid fa-gear"></i>
+              Settings
+            </a>
+          </div>
+
+          <div class="under-head">
+            <a href="http://">
+              <i class="fa-regular fa-circle-question"></i>
+              Support
+            </a>
+            <a href="login.html">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              Log Out
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <!-- main  -->
+      <main>
+        <div class="header">
+          <!-- menu -->
+          <button class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <div class="head-right">
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <div class="mode-icon">
+              <i id="theme-toggle" class="fa-regular fa-moon"></i>
+            </div>
+
+            <div class="avata">
+              <img src="https://i.pravatar.cc/100" />
+              <h5>Dr. Sarah Johnson</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="add-patient-page">
+          <div class="page-header">
+            <h2>Add New Prescription</h2>
+            <p>Enter patient information below.</p>
+          </div>
+
+          <form id="prescriptionForm">
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Patient</label>
+                <input
+                  type="text"
+                  id="prescriptionName"
+                  placeholder="Full Name"
+                />
+              </div>
+
+              <div class="form-group">
+                <label>Medication</label>
+                <input
+                  type="text"
+                  id="prescriptionMedication"
+                  placeholder="Madication"
+                />
+              </div>
+
+              <div class="form-group">
+                <label>Dosage</label>
+                <input
+                  type="text"
+                  id="prescriptionDosage"
+                  placeholder="Dosage"
+                />
+              </div>
+
+              <div class="form-group">
+                <label>Date</label>
+                <input type="date" id="prescriptionDate" />
+              </div>
+
+              <div class="form-group">
+                <label>Status</label>
+                <select id="prescriptionStatus">
+                  <option>Status</option>
+                  <option>Padding</option>
+                  <option>Comfirmed</option>
+                  <option>Cencalled</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="button-group">
+              <button type="submit" class="save-btn">Save Patient</button>
+              <button type="reset" class="cancel-btn">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+
+    <script src="./assets/script/prescription_doctor.js"></script>
+    <script src="../assets/script/script.js" type="module"></script>
+  </body>
+</html>

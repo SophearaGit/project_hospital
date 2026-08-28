@@ -1,18 +1,64 @@
 /* ================= TABLET ================= */
-@media (max-width: 992px) {
+/* @media (max-width: 992px) { */
+/* @media screen and (min-width: 768px) and (max-width: 1068px){ */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  :root {
+    --bg-color: #ffffff;
+    --text-color: #1a1a1a;
+    --accent-color: #3b82f6;
+  }
+
+  body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #f5f5f5;
+    --accent-color: #60a5fa;
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+    margin: 0;
+  }
 
   /* header  */
-  .head-page {
-    gap: 10px;
+  header {
+    margin-top: 20px;
+  }
+
+  .head {
+    margin-inline: 5%;
+    display: flex;
+    align-items: center;
+    /* background-color: #60a5fa; */
   }
 
   .head-logo {
-    width: 80px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .head-page {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    cursor: pointer;
   }
 
   .head-page a {
-    font-size: 15px;
-    padding: 8px 2px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    color: black;
+    transition: all 0.3s ease;
+    border: 1px solid #f5efef;
+    border-radius: 8px;
+    padding: 8px;
+    display: inline-block;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.1);
   }
 
   .nav-icons {
@@ -24,21 +70,32 @@
 
   .search {
     display: flex;
-    width: 100px;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 4px 10px;
+    width: 40px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    /* color: #121212; */
+    right: -50px;
   }
 
   .search:hover,
   .search:focus-within {
-    width: 100px;
+    width: 150px;
     border-color: #ccc;
   }
 
-
   /* home page  */
-
   /* section 1 */
+  .hero-section {
+    display: none;
+  }
+
   .hero-section .hero-content .hero-btn {
     gap: 20px;
+    display: block;
   }
 
   .hero-section .hero-content .hero-btn button:first-child {
@@ -49,22 +106,59 @@
     padding: 8px 6px;
   }
 
-  /* section 3 */
-  .doctors-grid {
-    gap: 50px;
+  /* section 2 */
+  .contain .stats-grid {
+    margin-inline: 5%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
-  .doctors-grid .doctor-card {
+  /* section 3 */
+
+  .top-doctors .top-doctor-conteiner {
+    margin-inline: 5%;
+  }
+
+  .doctors-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    justify-items: center;
+  }
+
+  .doctor-card {
     width: 300px;
   }
 
   /* section 4 */
+  .why-choose-us .container {
+    margin-inline: 5%;
+  }
+
   .why-choose-us .container .features-grid {
-    gap: 15px;
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
   }
 
   .why-choose-us .container .features-grid .feature-card h3 {
     font-size: 20px;
+  }
+
+  /* section 5 */
+  .patien-container {
+    margin-inline: 5%;
+    display: grid;
+    align-items: center;
+  }
+
+  .patien-container .patients-grid {
+    width: 100%;
+    display: grid;
+    gap: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 
   /* About US  */
@@ -135,7 +229,7 @@
   }
 
   /* Department */
-  .back-page .back-container>h1 {
+  .back-page .back-container > h1 {
     font-size: 20px;
   }
 
@@ -176,13 +270,10 @@
     grid-template-columns: 1fr;
     margin-inline: 15%;
   }
-
 }
 
 /* ================= MOBILE ================= */
-
 @media (max-width: 767.99px) {
-
   :root {
     --bg-color: #ffffff;
     --text-color: #1a1a1a;
@@ -199,7 +290,9 @@
     background-color: var(--bg-color);
     color: var(--text-color);
     /* Smooth fading transition when changing modes */
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
     margin: 0;
   }
 
@@ -242,7 +335,28 @@
     z-index: 1000;
   }
 
+  body.dark-mode .head-page {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 260px;
+    height: 100vh;
+    color: white;
+    background-color: #343333;
+    padding-top: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
   .head-page.show {
+    right: 0;
+  }
+
+  body.dark-mode .head-page.show {
     right: 0;
   }
 
@@ -253,6 +367,17 @@
     left: 24px;
     font-size: 28px;
     color: #000000;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  body.dark-mode .close-btn {
+    display: block;
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    font-size: 28px;
+    color: #f5f5f5;
     cursor: pointer;
     transition: transform 0.2s ease;
   }
@@ -273,11 +398,26 @@
     color: #000000 !important;
   }
 
+  body.dark-mode .nav-icons #theme-toggle {
+    font-size: 24px;
+    cursor: pointer;
+    color: #f5f5f5 !important;
+  }
+
   .head-page a {
     width: 90%;
     text-align: center;
     padding: 12px;
     color: #000000 !important;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  body.dark-mode .head-page a {
+    width: 90%;
+    text-align: center;
+    padding: 12px;
+    color: #f5f5f5 !important;
     text-decoration: none;
     font-weight: 500;
   }
@@ -290,7 +430,7 @@
   }
 
   .search {
-    display: hidden;
+    display: none;
     align-items: center;
     border: 1px solid transparent;
     border-radius: 999px;
@@ -308,9 +448,19 @@
   main {
     margin: 0px;
   }
-
+  /* banner no vdo  */
   .hero-section {
     margin-inline: 5%;
+    display: block;
+  }
+
+  .hero-section {
+    display: flex;
+  }
+
+  /* vdo banner  */
+  .hero {
+    display: none;
   }
 
   .hero-section .hero-content p {
@@ -356,6 +506,20 @@
   /* section 3 */
   .top-doctors {
     margin-top: 20px;
+  }
+
+  .doctors-grid {
+    grid-template-columns: repeat(1fr);
+    gap: 15px;
+    justify-items: center;
+  }
+
+  .all-doctor {
+    width: 300px;
+  }
+
+  .all-doctor .btn-all-doctor > button {
+    width: 100%;
   }
 
   /* section 4 */
@@ -441,6 +605,7 @@
   .back-page .back-container {
     margin-inline: 5%;
     margin-top: 0px;
+    display: block;
   }
 
   .container .doctor-container {

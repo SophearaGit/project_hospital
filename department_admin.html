@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style/aside.css" />
+    <link rel="stylesheet" href="./assets/style/main_admin.css" />
+    <link rel="stylesheet" href="./assets/style/department_admin.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Department</title>
+  </head>
+  <body>
+    <div class="container">
+        <!-- aside  -->
+        <aside class="aside">
+        <div class="title-head">
+          <i class="fa-solid fa-heart-pulse"></i>
+          <div class="title">
+            <span>CarePlus</span>
+            <span>Doctor Pannel</span>
+          </div>
+        </div>
+
+        <div class="aside-head">
+          <div class="upper-head">
+            <a href="main_admin.html">
+              <i class="fa-solid fa-house"></i>
+              Dashboard
+            </a>
+
+            <div class="dropdown">
+              <button class="dropbtn">
+                <i class="fa-solid fa-users"></i>
+                Users
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="dropdown-content">
+                <a href="patients_admin.html">
+                  <i class="fa-solid fa-user"></i>
+                  Patients
+                </a>
+
+                <a href="department_admin.html">
+                  <i class="fa-solid fa-building-user"></i>
+                  Departments
+                </a>
+
+                <a href="doctors_admin.html">
+                  <i class="fa-solid fa-user-doctor"></i>
+                  Doctors
+                </a>
+
+                <a href="appointments_admin.html">
+                  <i class="fa-solid fa-calendar-check"></i>
+                  Appointments
+                </a>
+              </div>
+            </div>
+
+            <a href="reports_admin.html">
+              <i class="fa-solid fa-chart-column"></i>
+              Reports
+            </a>
+
+            <a href="settings.html">
+              <i class="fa-solid fa-gear"></i>
+              Settings
+            </a>
+          </div>
+
+          <div class="under-head">
+            <a href="http://">
+              <i class="fa-regular fa-circle-question"></i>
+              Support
+            </a>
+            <a href="login.html">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              Log Out
+            </a>
+          </div>
+        </div>
+        </aside>
+
+       <!-- </div> -->
+        <main class="main">
+        <div class="header">
+          <!-- Left -->
+          <button class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <!-- Center -->
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search patients, records..." />
+          </div>
+
+          <!-- Right -->
+          <div class="right-header">
+            <!-- Dark Mode -->
+            <div class="mode-icon">
+              <i id="theme-toggle" class="fa-regular fa-moon"></i>
+            </div>
+
+            <!-- Notification -->
+            <div class="notification">
+              <i class="fa-solid fa-bell"></i>
+              <span class="dot"></span>
+            </div>
+
+            <!-- Profile -->
+            <div class="profile">
+              <img src="https://i.pravatar.cc/100" alt="" />
+              <div class="info-name">
+                <h4 id="profileName">Administrator</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- =========================
+             PAGE TOP
+        ========================== -->
+        <div class="page-top">
+            <div class="left-addbtn">
+              <h1>Add Departments</h1>
+              <p>gesgthbgn</p>
+            </div>
+
+            <button class="add-department-btn">
+                <a href="./add_department_admin.html">
+                    <i class="fa-solid fa-plus"></i>
+                    Add Department
+                </a>
+            </button>
+        </div>
+
+        <div class="contain">
+        <!-- =========================
+             STATISTICS
+        ========================== -->
+            <div class="department-stats">
+            <!-- Total Departments -->
+            <div class="stat-card">
+                <div class="stat-icon blue">
+                    <i class="fa-solid fa-building"></i>
+                </div>
+
+                <div class="stat-info">
+                    <p>Total Departments</p>
+                    <h2>12</h2>
+                    <span>All Departments</span>
+                </div>
+            </div>
+
+            <!-- Total Doctors -->
+            <div class="stat-card">
+                <div class="stat-icon green">
+                    <i class="fa-solid fa-user-doctor"></i>
+                </div>
+
+                <div class="stat-info">
+                    <p>Total Doctors</p>
+                    <h2>68</h2>
+                    <span>In All Departments</span>
+                </div>
+            </div>
+
+            <!-- Appointments -->
+            <div class="stat-card">
+                <div class="stat-icon purple">
+                    <i class="fa-regular fa-calendar-check"></i>
+                </div>
+
+                <div class="stat-info">
+                    <p>Total Appointments</p>
+                    <h2>842</h2>
+                    <span>This Month</span>
+                </div>
+            </div>
+
+            <!-- Active -->
+            <div class="stat-card">
+                <div class="stat-icon orange">
+                    <i class="fa-solid fa-chart-column"></i>
+                </div>
+
+                <div class="stat-info">
+                    <p>Active Departments</p>
+                    <h2>10</h2>
+                    <span>Active Now</span>
+                </div>
+            </div>
+            </div>
+
+        <!-- =========================
+             DEPARTMENT TABLE CARD
+        ========================== -->
+            <section class="department-card">
+
+        <!-- Table Header -->
+        <div class="department-card-header">
+            <h2>All Departments</h2>
+            <select class="status-filter">
+                <option>All Status</option>
+                <option>Active</option>
+                <option>Inactive</option>
+            </select>
+
+        </div>
+
+
+        <!-- Table -->
+        <div class="table-wrapper">
+
+            <table class="department-table">
+
+                <thead>
+
+                    <tr>
+                        <th>Department</th>
+                        <th>Head of Department</th>
+                        <th>Doctors</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <!-- Cardiology -->
+                    <tr>
+
+                        <td>
+                            <div class="department-name">
+
+                                <div class="department-icon cardiology">
+                                    <i class="fa-solid fa-heart-pulse"></i>
+                                </div>
+
+                                <span>Cardiology</span>
+
+                            </div>
+                        </td>
+
+
+                        <td>
+                            <div class="doctor-info">
+
+                                <img
+                                    src="https://i.pravatar.cc/100?img=12"
+                                    alt="Doctor"
+                                >
+
+                                <span>Dr. Robert Anderson</span>
+
+                            </div>
+                        </td>
+
+
+                        <td>12</td>
+
+
+                        <td>
+                            Heart and blood vessel
+                            disorders diagnosis.
+                        </td>
+
+
+                        <td>
+                            <span class="status active">
+                                Active
+                            </span>
+                        </td>
+
+                        <td>
+                            <div class="action-buttons">
+
+                                <button class="edit-btn">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+
+                                <button class="delete-btn">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+
+                            </div>
+                        </td>
+
+                    </tr>
+
+
+                    <!-- Orthopedics -->
+                    <tr>
+
+                        <td>
+                            <div class="department-name">
+
+                                <div class="department-icon orthopedics">
+                                    <i class="fa-solid fa-bone"></i>
+                                </div>
+
+                                <span>Orthopedics</span>
+
+                            </div>
+                        </td>
+
+
+                        <td>
+                            <div class="doctor-info">
+
+                                <img
+                                    src="https://i.pravatar.cc/100?img=11"
+                                    alt="Doctor"
+                                >
+
+                                <span>Dr. Michael Brown</span>
+
+                            </div>
+                        </td>
+
+
+                        <td>10</td>
+
+
+                        <td>
+                            Bone, joint and muscle
+                            care and treatment.
+                        </td>
+
+
+                        <td>
+                            <span class="status active">
+                                Active
+                            </span>
+                        </td>
+
+
+                        <td>
+                            <div class="action-buttons">
+
+                                <button class="edit-btn">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+
+                                <button class="delete-btn">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+
+                            </div>
+                        </td>
+
+                    </tr>
+
+
+                    <!-- Oncology -->
+                    <tr>
+
+                        <td>
+                            <div class="department-name">
+
+                                <div class="department-icon oncology">
+                                    <i class="fa-solid fa-ribbon"></i>
+                                </div>
+
+                                <span>Oncology</span>
+
+                            </div>
+                        </td>
+
+
+                        <td>
+                            <div class="doctor-info">
+
+                                <img
+                                    src="https://i.pravatar.cc/100?img=47"
+                                    alt="Doctor"
+                                >
+
+                                <span>Dr. Sarah Johnson</span>
+
+                            </div>
+                        </td>
+
+
+                        <td>8</td>
+
+
+                        <td>
+                            Cancer treatment and
+                            oncology services.
+                        </td>
+
+
+                        <td>
+                            <span class="status active">
+                                Active
+                            </span>
+                        </td>
+
+
+                        <td>
+                            <div class="action-buttons">
+
+                                <button class="edit-btn">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+
+                                <button class="delete-btn">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+
+                            </div>
+                        </td>
+
+                    </tr>
+
+
+                    <!-- Dermatology -->
+                    <tr>
+
+                        <td>
+                            <div class="department-name">
+
+                                <div class="department-icon dermatology">
+                                    <i class="fa-solid fa-hand-dots"></i>
+                                </div>
+
+                                <span>Dermatology</span>
+
+                            </div>
+                        </td>
+
+
+                        <td>
+                            <div class="doctor-info">
+
+                                <img
+                                    src="https://i.pravatar.cc/100?img=32"
+                                    alt="Doctor"
+                                >
+
+                                <span>Dr. Emily Davis</span>
+
+                            </div>
+                        </td>
+
+
+                        <td>6</td>
+
+
+                        <td>
+                            Skin, hair and nail
+                            care and treatment.
+                        </td>
+
+
+                        <td>
+                            <span class="status active">
+                                Active
+                            </span>
+                        </td>
+
+
+                        <td>
+                            <div class="action-buttons">
+
+                                <button class="edit-btn">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+
+                                <button class="delete-btn">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+
+                            </div>
+                        </td>
+
+                    </tr>
+
+
+                    <!-- Surgery -->
+                    <tr>
+
+                        <td>
+                            <div class="department-name">
+
+                                <div class="department-icon surgery">
+                                    <i class="fa-solid fa-syringe"></i>
+                                </div>
+
+                                <span>Surgery</span>
+
+                            </div>
+                        </td>
+
+
+                        <td>
+                            <div class="doctor-info">
+
+                                <img
+                                    src="https://i.pravatar.cc/100?img=13"
+                                    alt="Doctor"
+                                >
+
+                                <span>Dr. James Wilson</span>
+
+                            </div>
+                        </td>
+
+
+                        <td>15</td>
+
+
+                        <td>
+                            General and specialized
+                            surgical procedures.
+                        </td>
+
+
+                        <td>
+                            <span class="status active">
+                                Active
+                            </span>
+                        </td>
+
+
+                        <td>
+                            <div class="action-buttons">
+
+                                <button class="edit-btn">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+
+                                <button class="delete-btn">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+
+                            </div>
+                        </td>
+
+                    </tr>
+
+
+                    <!-- Gynecology -->
+                    <tr>
+
+                        <td>
+                            <div class="department-name">
+
+                                <div class="department-icon gynecology">
+                                    <i class="fa-solid fa-venus"></i>
+                                </div>
+
+                                <span>Gynecology</span>
+
+                            </div>
+                        </td>
+
+
+                        <td>
+                            <div class="doctor-info">
+
+                                <img
+                                    src="https://i.pravatar.cc/100?img=44"
+                                    alt="Doctor"
+                                >
+
+                                <span>Dr. Amanda Taylor</span>
+
+                            </div>
+                        </td>
+
+
+                        <td>9</td>
+
+
+                        <td>
+                            Women's health and
+                            pregnancy care.
+                        </td>
+
+
+                        <td>
+                            <span class="status inactive">
+                                Inactive
+                            </span>
+                        </td>
+
+
+                        <td>
+                            <div class="action-buttons">
+
+                                <button class="edit-btn">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+
+                                <button class="delete-btn">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+
+                            </div>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- =========================
+             TABLE FOOTER
+        ========================== -->
+
+        <div class="table-footer">
+
+            <p>
+                Showing 1 to 6 of 12 entries
+            </p>
+
+            <div class="pagination">
+
+                <button>
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <button class="page-active">
+                    1
+                </button>
+
+                <button>
+                    2
+                </button>
+
+                <button>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+            </section>
+        </div>
+        </main> 
+
+    <script src="../assets/script/script.js" type="module"></script>
+    <script src="../assets/script/menu_dashboard.js"></script>
+    <script src="./assets/script/dropdown_dashboard.js"></script>
+  </body>
+</html>

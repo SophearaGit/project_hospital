@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style/main_admin.css" />
+    <link rel="stylesheet" href="./assets/style/aside.css" />
+    <link rel="stylesheet" href="./assets/style/add_department_admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Add Departments</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- aside  -->
+      <aside class="aside">
+        <div class="title-head">
+          <i class="fa-solid fa-heart-pulse"></i>
+          <div class="title">
+            <span>CarePlus</span>
+            <span>Doctor Pannel</span>
+          </div>
+        </div>
+
+        <div class="aside-head">
+          <div class="upper-head">
+            <a href="main_admin.html">
+              <i class="fa-solid fa-house"></i>
+              Dashboard
+            </a>
+
+            <div class="dropdown">
+              <button class="dropbtn">
+                <i class="fa-solid fa-users"></i>
+                Users
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="dropdown-content">
+                <a href="patients_admin.html">
+                  <i class="fa-solid fa-user"></i>
+                  Patients
+                </a>
+
+                <a href="department_admin.html">
+                  <i class="fa-solid fa-building-user"></i>
+                  Departments
+                </a>
+
+                <a href="doctors_admin.html">
+                  <i class="fa-solid fa-user-doctor"></i>
+                  Doctors
+                </a>
+
+                <a href="appointments_admin.html">
+                  <i class="fa-solid fa-calendar-check"></i>
+                  Appointments
+                </a>
+              </div>
+            </div>
+
+            <a href="reports_admin.html">
+              <i class="fa-solid fa-chart-column"></i>
+              Reports
+            </a>
+
+            <a href="settings.html">
+              <i class="fa-solid fa-gear"></i>
+              Settings
+            </a>
+          </div>
+
+          <div class="under-head">
+            <a href="http://">
+              <i class="fa-regular fa-circle-question"></i>
+              Support
+            </a>
+            <a href="login.html">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              Log Out
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <!-- main  -->
+      <main class="main">
+        <!-- =========================
+         PAGE HEADER
+        ========================== -->
+        <div class="header">
+          <!-- Left -->
+          <button class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <!-- Center -->
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search patients, records..." />
+          </div>
+
+          <!-- Right -->
+          <div class="right-header">
+            <!-- Dark Mode -->
+            <div class="mode-icon">
+              <i id="theme-toggle" class="fa-regular fa-moon"></i>
+            </div>
+
+            <!-- Notification -->
+            <div class="notification">
+              <i class="fa-solid fa-bell"></i>
+              <span class="dot"></span>
+            </div>
+
+            <!-- Profile -->
+            <div class="profile">
+              <img src="https://i.pravatar.cc/100" alt="" />
+              <div class="info-name">
+                <h4 id="profileName">Administrator</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- =========================
+         DEPARTMENT FORM CARD
+    ========================== -->
+        <section class="department-form-card">
+          <!-- Card Header -->
+          <div class="form-card-header">
+            <div class="department-title-icon">
+              <i class="fa-solid fa-building"></i>
+            </div>
+
+            <div>
+              <h2>Department Information</h2>
+              <p>Add new department details</p>
+            </div>
+          </div>
+
+          <!-- =========================
+             FORM
+        ========================== -->
+          <form class="department-form">
+            <div class="form-grid">
+              <!-- Department Name -->
+              <div class="form-group">
+                <label> Department Name <span>*</span> </label>
+
+                <input type="text" placeholder="Enter department name" />
+              </div>
+
+              <!-- Department Code -->
+              <div class="form-group">
+                <label> Department Code <span>*</span> </label>
+
+                <input
+                  type="text"
+                  placeholder="Enter department code (e.g. CARD)"
+                />
+              </div>
+
+              <!-- Head of Department -->
+              <div class="form-group">
+                <label> Head of Department <span>*</span> </label>
+
+                <select>
+                  <option value="">Select head of department</option>
+
+                  <option>Dr. Robert Anderson</option>
+
+                  <option>Dr. Michael Brown</option>
+
+                  <option>Dr. Sarah Johnson</option>
+
+                  <option>Dr. Emily Davis</option>
+                </select>
+              </div>
+
+              <!-- Description -->
+              <div class="form-group">
+                <label> Description <span>*</span> </label>
+
+                <textarea placeholder="Enter department description"></textarea>
+              </div>
+
+              <!-- Phone -->
+              <div class="form-group">
+                <label> Phone Number </label>
+
+                <div class="input-icon">
+                  <i class="fa-solid fa-phone"></i>
+
+                  <input type="tel" placeholder="Enter phone number" />
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="form-group">
+                <label> Email </label>
+
+                <div class="input-icon">
+                  <i class="fa-regular fa-envelope"></i>
+
+                  <input type="email" placeholder="Enter email address" />
+                </div>
+              </div>
+
+              <!-- Location -->
+              <div class="form-group">
+                <label> Location </label>
+
+                <div class="input-icon">
+                  <i class="fa-solid fa-location-dot"></i>
+
+                  <input type="text" placeholder="Enter department location" />
+                </div>
+              </div>
+
+              <!-- Total Doctors -->
+              <div class="form-group">
+                <label> Total Doctors </label>
+
+                <div class="input-icon">
+                  <i class="fa-regular fa-user"></i>
+
+                  <input
+                    type="number"
+                    placeholder="Enter total number of doctors"
+                  />
+                </div>
+              </div>
+
+              <!-- =========================
+                     DEPARTMENT ICON
+                ========================== -->
+              <div class="form-group icon-section">
+                <label> Department Icon </label>
+
+                <p class="help-text">
+                  Choose an icon to represent this department
+                </p>
+
+                <div class="icon-options">
+                  <label class="icon-option active">
+                    <input type="radio" name="departmentIcon" checked />
+
+                    <i class="fa-solid fa-building"></i>
+                  </label>
+
+                  <label class="icon-option">
+                    <input type="radio" name="departmentIcon" />
+
+                    <i class="fa-solid fa-heart-pulse"></i>
+                  </label>
+
+                  <label class="icon-option">
+                    <input type="radio" name="departmentIcon" />
+
+                    <i class="fa-solid fa-bone"></i>
+                  </label>
+
+                  <label class="icon-option">
+                    <input type="radio" name="departmentIcon" />
+
+                    <i class="fa-solid fa-ribbon"></i>
+                  </label>
+
+                  <label class="icon-option">
+                    <input type="radio" name="departmentIcon" />
+
+                    <i class="fa-solid fa-kit-medical"></i>
+                  </label>
+
+                  <label class="icon-option">
+                    <input type="radio" name="departmentIcon" />
+
+                    <i class="fa-solid fa-syringe"></i>
+                  </label>
+
+                  <label class="icon-option">
+                    <input type="radio" name="departmentIcon" />
+
+                    <i class="fa-solid fa-venus"></i>
+                  </label>
+                </div>
+              </div>
+
+              <!-- =========================
+                     DEPARTMENT IMAGE
+                ========================== -->
+              <div class="form-group image-section">
+                <label> Department Image </label>
+
+                <p class="help-text">Upload department image or illustration</p>
+
+                <label class="upload-box">
+                  <input type="file" accept="image/png, image/jpeg" />
+
+                  <div class="upload-icon">
+                    <i class="fa-regular fa-image"></i>
+                  </div>
+
+                  <h4>Upload Image</h4>
+
+                  <p>PNG, JPG up to 2MB</p>
+                </label>
+              </div>
+
+              <!-- Status -->
+              <div class="form-group status-group">
+                <label> Status <span>*</span> </label>
+
+                <div class="status-options">
+                  <label class="radio-option">
+                    <input type="radio" name="status" value="active" checked />
+
+                    <span>Active</span>
+                  </label>
+
+                  <label class="radio-option">
+                    <input type="radio" name="status" value="inactive" />
+
+                    <span>Inactive</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- =========================
+                 BUTTONS
+            ========================== -->
+            <div class="form-actions">
+              <button type="button" class="cancel-btn">
+                <a href="./department_admin.html">Cancel</a>
+              </button>
+
+              <button type="submit" class="save-btn">
+                <i class="fa-regular fa-floppy-disk"></i>
+
+                Save Department
+              </button>
+            </div>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <script src="../assets/script/script.js" type="module"></script>
+    <script src="../assets/script/menu_dashboard.js"></script>
+    <script src="./assets/script/dropdown_dashboard.js"></script>
+  </body>
+</html>
